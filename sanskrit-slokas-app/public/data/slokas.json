@@ -1,0 +1,156 @@
+[
+  {
+    "id": 1,
+    "deity": "shiva",
+    "scripture": "Stotram",
+    "title": "Karpura Gauram Karunavataram",
+    "originalText": "कर्पूरगौरं करुणावतारं संसारसारं भुजगेन्द्रहारम्।\nसदा वसन्तं हृदयारविन्दे भवं भवानीसहितं नमामि॥",
+    "transliteration": "karpūragauraṁ karuṇāvatāraṁ sansārasāraṁ bhujagendrahāram,sadā vasantaṁ hṛdayāravinde\nbhavaṁ bhavānīsahitaṁ namāmi.",
+    "meaning": {
+      "en": "I bow to that camphor-white-complexioned one, who is the incarnation of compassion, the essence of the world, who wears the king of serpents as a garland, ever-dwelling in the lotus of my heart, I bow to Shiva and Shakti, together.",
+      "hi": "मैं उस कपूर-गौर वर्ण वाले, करुणा के अवतार, संसार के सार, भुजंगों के राजा का हार पहनने वाले, सदा मेरे हृदय-कमल में निवास करने वाले, शिव और शक्ति को एक साथ नमन करता हूँ।",
+      "te": "కర్పూర గౌరవర్ణుడు, కరుణ స్వరూపుడు, ప్రపంచ సారాంశము, సర్పరాజైన వాసుకిని హారంగా ధరించినవాడు, ఎల్లప్పుడూ నా హృదయ కమలంలో నివసించేవాడు అయిన శివునికి, శక్తితో కలిసి నమస్కరిస్తున్నాను."
+    },
+    "audioUrl": "/audio/stotram_1.mp3"
+  },
+  {
+    "id": 2,
+    "deity": "shiva",
+    "scripture": "Mantra",
+    "title": "Om Namah Shivaya",
+    "originalText": "ॐ नमः शिवाय",
+    "transliteration": "oṁ namaḥ śivāya",
+    "meaning": {
+      "en": "A salutation to Shiva, one of the most popular Hindu mantras and the most important mantra in Shaivism.",
+      "hi": "शिव को नमस्कार, शैव धर्म में सबसे महत्वपूर्ण और सबसे लोकप्रिय हिंदू मंत्रों में से एक।",
+      "te": "శివునికి నమస్కారం, శైవమతంలో అత్యంత ముఖ్యమైన మరియు అత్యంత ప్రజాదరణ పొందిన హిందూ మంత్రాలలో ఒకటి."
+    },
+    "audioUrl": "/audio/stotram_2.mp3"
+  },
+  {
+    "id": 3,
+    "deity": "shiva",
+    "scripture": "Rigveda",
+    "title": "Maha Mrityunjaya Mantra",
+    "originalText": "ॐ त्र्यम्बकं यजामहे सुगन्धिं पुष्टिवर्धनम्\nउर्वारुकमिव बन्धनान्मृत्योर्मुक्षीय माऽमृतात्॥",
+    "transliteration": "oṁ tryambakaṁ yajāmahe sugandhiṁ puṣṭivardhanam\nurvārukamiva bandhanānmṛtyormukṣīya mā'mṛtāt.",
+    "meaning": {
+      "en": "We worship the three-eyed One, who is fragrant and who nourishes all. Like a cucumber from its stem, may I be liberated from death, not from immortality.",
+      "hi": "हम त्रिनेत्रधारी की पूजा करते हैं, जो सुगंधित हैं और जो सभी का पोषण करते हैं। जैसे खीरा अपने तने से मुक्त हो जाता है, वैसे ही मैं मृत्यु से मुक्त हो जाऊं, अमरता से नहीं।",
+      "te": "మూడు కన్నుల దేవుడు, సుగంధ పరిమళుడు, సర్వ పోషకుడు అయిన ఆయన్ని మేము పూజిస్తున్నాము. దోసకాయ దాని తొడిమ నుండి ఎలా విడిపోతుందో, అలాగే నేను మృత్యువు నుండి విముక్తి పొందుతాను, అమరత్వం నుండి కాదు."
+    },
+    "audioUrl": "/audio/placeholder.mp3"
+  },
+  {
+    "id": 4,
+    "deity": "shiva",
+    "scripture": "Shiva Tandava Stotram",
+    "title": "Verse 1",
+    "originalText": "जटाटवीगलज्जलप्रवाहपावितस्थले\nगलेऽवलम्ब्य लम्बितां भुजङ्गतुङ्गमालिकाम्।\nडमड्डमड्डमड्डमन्निनादवड्डमर्वयं\nचकार चण्डताण्डवं तनोतु नः शिवः शिवम्॥",
+    "transliteration": "jaṭāṭavīgajjalapravāhapāvitasthale\ngale'valambya lambitāṁ bhujaṅgatuṅgamālikām,\nḍamaḍḍamaḍḍamaḍḍamanninādavaḍḍamarvayaṁ\ncakāra caṇḍatāṇḍavaṁ tanotu naḥ śivaḥ śivam.",
+    "meaning": {
+      "en": "From the forest of his matted hair, water flows and sanctifies the ground. On his neck, a high garland of the serpent. The damaru drum emits the sound 'damat, damat, damat, damat'. Shiva, do the auspicious Tandava dance. May he bless us.",
+      "hi": "उनकी जटाओं के वन से जल प्रवाहित होकर भूमि को पवित्र करता है। उनके गले में ऊँची सर्पमाला है। डमरू से 'डमट, डमट, डमट, डमट' की ध्वनि निकलती है। शिव auspicious तांडव नृत्य करें। वे हमें आशीर्वाद दें।",
+      "te": "ఆయన జటల వనంలో నుండి నీరు ప్రవహించి భూమిని పవిత్రం చేస్తుంది. ఆయన మెడలో ఎత్తైన పాము హారం ఉంది. డమరుకం నుండి 'డమట్, డమట్, డమట్, డమట్' అనే శబ్దం వస్తుంది. శివుడు మంగళకరమైన తాండవం చేయాలి. ఆయన మనకు ఆశీర్వదించాలి."
+    },
+    "audioUrl": "/audio/placeholder.mp3"
+  },
+  {
+    "id": 5,
+    "deity": "shiva",
+    "scripture": "Shiva Tandava Stotram",
+    "title": "Verse 2",
+    "originalText": "धनञ्जयाहुतीकृतप्रचण्डपञ्चसायके\nधराधरेन्द्रनन्दिनीकुचाग्रचित्रपत्रके॥",
+    "transliteration": "dhanañjayāhutīkṛtapracaṇḍapañcasāyake\ndharādharēndranandinīkucāgracitrapatrakē.",
+    "meaning": {
+      "en": "The five arrows of Manmatha (Cupid) were burnt by the fire of Shiva's third eye. The daughter of the mountain (Parvati) has beautiful designs on her breast.",
+      "hi": "मन्मथ (कामदेव) के पाँच बाण शिव की तीसरी आँख की अग्नि से भस्म हो गए। पर्वतराज की पुत्री (पार्वती) के वक्षस्थल पर सुंदर चित्र बने हैं।",
+      "te": "మన్మథుని ఐదు బాణాలు శివుని మూడవ కన్ను నుండి వచ్చిన అగ్నిలో కాలిపోయాయి. పర్వతరాజు కుమార్తె (పార్వతి) యొక్క వక్షోజాలపై అందమైన అలంకరణలు ఉన్నాయి."
+    },
+    "audioUrl": "/audio/placeholder.mp3"
+  },
+  {
+    "id": 6,
+    "deity": "shiva",
+    "scripture": "Shiva Tandava Stotram",
+    "title": "Verse 3",
+    "originalText": "चलत्कुञ्चितचारुतुङ्गकुन्तलभारमण्डिते\nकपोलकन्धरे स्फुरत्कपालमालिका द्युतिमति॥",
+    "transliteration": "calatkuñcitacārutuṅgakuntalabhāramaṇḍitē\nkapōlakandharē sphuratkapālamālikā dyutimati.",
+    "meaning": {
+      "en": "The beautiful curly hair is adorned with the weight of the locks. On the neck, there is a garland of skulls that shines brilliantly.",
+      "hi": "सुंदर घुंघराले बालों को जटाओं के भार से सजाया गया है। गले में चमकदार कपालमाला है।",
+      "te": "అందమైన వంకర జుట్టు జటల భారంతో అలంకరించబడింది. మెడలో ప్రకాశించే కపాలమాల ఉంది."
+    },
+    "audioUrl": "/audio/placeholder.mp3"
+  },
+  {
+    "id": 7,
+    "deity": "shiva",
+    "scripture": "Shiva Tandava Stotram",
+    "title": "Verse 4",
+    "originalText": "स्फुरद्दिगन्तसन्ततिप्रमोदमानमानसे\nकृशोदरि लोचनत्रयायमानलोकशोकहारि॥",
+    "transliteration": "sphuraddigantasantatipramōdamānamānasē\nkṛśōdari lōcanatrayāyamānalōkaśōkahāri.",
+    "meaning": {
+      "en": "The mind is filled with joy by the continuous flow of the directions. The three eyes destroy the sorrow of the world.",
+      "hi": "दिशाओं की निरंतरता से मन आनंदित होता है। तीन नेत्र संसार के दुख को दूर करते हैं।",
+      "te": "దిశల నిరంతర ప్రవాహం మనసును ఆనందంతో నింపుతుంది. మూడు కళ్ళు లోక శోకాన్ని తొలగిస్తాయి."
+    },
+    "audioUrl": "/audio/placeholder.mp3"
+  },
+  {
+    "id": 8,
+    "deity": "shiva",
+    "scripture": "Shiva Tandava Stotram",
+    "title": "Verse 5",
+    "originalText": "प्रमथनाथपिनाकपाणिमुद्दयत्क्रोधविश्वदहनं\nकृशानुं नीलकण्ठं नमामि॥",
+    "transliteration": "pramathanāthapinākapāṇimuddayatkrōdhaviśvadahaṇaṁ\nkṛśānuṁ nīlakaṇṭhaṁ namāmi.",
+    "meaning": {
+      "en": "I bow to the blue-throated one, the lord of the goblins, who holds the Pinaka bow, who is the fire that burns the universe in anger.",
+      "hi": "मैं नीलकंठ, प्रेतों के स्वामी, पिनाक धनुषधारी, क्रोध में सम्पूर्ण सृष्टि को भस्म करने वाले शिव को नमन करता हूँ।",
+      "te": "నేను నీలకంఠుడు, భూతగణాధిపతి, పినాకధారి, కోపంలో విశ్వాన్ని దహించే అగ్నిస్వరూపుడైన శివునికి నమస్కరిస్తున్నాను."
+    },
+    "audioUrl": "/audio/placeholder.mp3"
+  },
+  {
+    "id": 9,
+    "deity": "shiva",
+    "scripture": "Shiva Tandava Stotram",
+    "title": "Verse 6",
+    "originalText": "नित्यं सङ्गतसुखदो लसत्करालभालहल्ये\nविमुक्तदुर्मतिधृति क्षिपत्क्षोणीभृल्लोलकुन्ते॥",
+    "transliteration": "nityaṁ saṅgatasukhadō lasatkarālabhālahalyē\nvimuktadurmatidhṛti kṣipatkṣōṇībhr̥llōlakuntē.",
+    "meaning": {
+      "en": "Always giving happiness to those who are united with him, with the terrible forehead that shines, who removes the burden of evil thoughts, who throws the mountain peaks.",
+      "hi": "जो उनके साथ जुड़े रहते हैं, उन्हें सदा सुख देने वाले, चमकदार भयानक ललाट वाले, बुरी बुद्धि का भार दूर करने वाले, पर्वत शिखरों को फेंकने वाले।",
+      "te": "ఆయనతో కలిసినవారికి ఎల్లప్పుడూ సుఖాన్ని ఇచ్చేవాడు, ప్రకాశించే భయంకరమైన నుదురు కలవాడు, చెడు ఆలోచనల భారాన్ని తొలగించేవాడు, పర్వత శిఖరాలను విసిరేవాడు."
+    },
+    "audioUrl": "/audio/placeholder.mp3"
+  },
+  {
+    "id": 10,
+    "deity": "shiva",
+    "scripture": "Shiva Tandava Stotram",
+    "title": "Verse 7",
+    "originalText": "जटाकटाहसम्भ्रमभ्रमन्निलिम्पनिर्झरी\nविलोलवीचिवल्लरीविराजमानमूर्धनि॥",
+    "transliteration": "jaṭākaṭāhasambhramabhramannilimpanirjharī\nvilōlavīcivallarīvirājamānamūrdhani.",
+    "meaning": {
+      "en": "The Ganga flows through the matted hair, creating waves that shine on the head like beautiful creepers.",
+      "hi": "गंगा जटाओं में बहती है, सिर पर सुंदर लताओं की तरह लहरें बनाती है।",
+      "te": "జటలలో గంగా ప్రవహిస్తూ, తలపై అందమైన లతల వలె అలలు సృష్టిస్తుంది."
+    },
+    "audioUrl": "/audio/placeholder.mp3"
+  },
+  {
+    "id": 11,
+    "deity": "shiva",
+    "scripture": "Shiva Tandava Stotram",
+    "title": "Verse 8",
+    "originalText": "धगद्धगद्धगज्ज्वलल्ललाटपट्टपावके\nकिशोरचन्द्रशेखरे रतिः प्रतिक्षणं मम॥",
+    "transliteration": "dhagaddhagaddhagajjvalallalāṭapaṭṭapāvakē\nkiśōracandraśēkharē ratiḥ pratikṣaṇaṁ mama.",
+    "meaning": {
+      "en": "The fire on the forehead burns with the sound 'dhagat, dhagat, dhagat'. My love for the young moon-crested one increases every moment.",
+      "hi": "ललाट की अग्नि 'धगट, धगट, धगट' की ध्वनि के साथ जलती है। किशोर चंद्रशेखर के प्रति मेरा प्रेम हर क्षण बढ़ता है।",
+      "te": "నుదుటిపై అగ్ని 'ధగట్, ధగట్, ధగట్' అనే శబ్దంతో మండుతుంది. యువ చంద్రశేఖరుడిపై నా ప్రేమ ప్రతి క్షణం పెరుగుతుంది."
+    },
+    "audioUrl": "/audio/placeholder.mp3"
+  }
+] 

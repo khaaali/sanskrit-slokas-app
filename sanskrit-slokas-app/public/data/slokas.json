@@ -1,156 +1,383 @@
 [
   {
-    "id": 1,
-    "deity": "shiva",
+    "deities": ["shiva"],
     "scripture": "Stotram",
     "title": "Karpura Gauram Karunavataram",
-    "originalText": "कर्पूरगौरं करुणावतारं संसारसारं भुजगेन्द्रहारम्।\nसदा वसन्तं हृदयारविन्दे भवं भवानीसहितं नमामि॥",
-    "transliteration": "karpūragauraṁ karuṇāvatāraṁ sansārasāraṁ bhujagendrahāram,sadā vasantaṁ hṛdayāravinde\nbhavaṁ bhavānīsahitaṁ namāmi.",
-    "meaning": {
-      "en": "I bow to that camphor-white-complexioned one, who is the incarnation of compassion, the essence of the world, who wears the king of serpents as a garland, ever-dwelling in the lotus of my heart, I bow to Shiva and Shakti, together.",
-      "hi": "मैं उस कपूर-गौर वर्ण वाले, करुणा के अवतार, संसार के सार, भुजंगों के राजा का हार पहनने वाले, सदा मेरे हृदय-कमल में निवास करने वाले, शिव और शक्ति को एक साथ नमन करता हूँ।",
-      "te": "కర్పూర గౌరవర్ణుడు, కరుణ స్వరూపుడు, ప్రపంచ సారాంశము, సర్పరాజైన వాసుకిని హారంగా ధరించినవాడు, ఎల్లప్పుడూ నా హృదయ కమలంలో నివసించేవాడు అయిన శివునికి, శక్తితో కలిసి నమస్కరిస్తున్నాను."
-    },
-    "audioUrl": "/audio/stotram_1.mp3"
+    "slokas": [
+      {
+        "id": 1,
+        "originalText": "कर्पूरगौरं करुणावतारं संसारसारं भुजगेन्द्रहारम्।\nसदा वसन्तं हृदयारविन्दे भवं भवानीसहितं नमामि॥",
+        "transliteration": {
+          "en": "karpūragauraṁ karuṇāvatāraṁ sansārasāraṁ bhujagendrahāram,sadā vasantaṁ hṛdayāravinde\nbhavaṁ bhavānīsahitaṁ namāmi.",
+          "te": "కర్పూర గౌరం కరుణావతారం సంసారసారం భుజగేంద్రహారం|\nసదావసంతం హృదయారవిందే భవం భవానీసహితం నమామి||"
+        },
+        "meaning": {
+          "en": "I bow to that camphor-white-complexioned one, who is the incarnation of compassion, the essence of the world, who wears the king of serpents as a garland, ever-dwelling in the lotus of my heart, I bow to Shiva and Shakti, together.",
+          "hi": "मैं उस कपूर-गौर वर्ण वाले, करुणा के अवतार, संसार के सार, भुजंगों के राजा का हार पहनने वाले, सदा मेरे हृदय-कमल में निवास करने वाले, शिव और शक्ति को एक साथ नमन करता हूँ।",
+          "te": "కర్పూర గౌరవర్ణుడు, కరుణ స్వరూపుడు, ప్రపంచ సారాంశము, సర్పరాజైన వాసుకిని హారంగా ధరించినవాడు, ఎల్లప్పుడూ నా హృదయ కమలంలో నివసించేవాడు అయిన శివునికి, శక్తితో కలిసి నమస్కరిస్తున్నాను."
+        },
+        "audioUrl": "/audio/stotram_1.mp3"
+      }
+    ]
   },
   {
-    "id": 2,
-    "deity": "shiva",
+    "deities": ["shiva"],
+    "scripture": "Mantra",
+    "title": "Maha Mrityunjaya Mantra",
+    "slokas": [
+      {
+        "id": 1,
+        "originalText": "ॐ त्र्यंबकं यजामहे सुगंधिं पुष्टिवर्धनम्।\nउर्वारुकमिव बन्धनान्मृत्योर्मुक्षीय माऽमृतात्॥",
+        "transliteration": {
+          "en": "oṃ tryambakaṃ yajāmahe sugandhiṃ puṣṭivardhanam |\nurvārukam iva bandhanān mṛtyor mukṣīya mā’mṛtāt ||",
+          "te": "ఓం త్రయంబకం యజామహే సుగంధిం పుష్టివర్ధనం |\nఉర్వారుకమివ బంధనాన్మృత్యోర్ముఖ్షీయ మామృతాత్ ||"
+        },
+        "meaning": {
+          "en": "We worship the three-eyed One (Lord Shiva), fragrant and nourishing. May He liberate us from the bondage of worldly attachments and death, just as a ripe cucumber is severed from the vine — but not from immortality.",
+          "hi": "हम तीन नेत्रों वाले, सुगंधित, और पोषण देने वाले शिव की उपासना करते हैं। वह हमें मृत्यु के बंधनों से मुक्त करें, जैसे खीरा बेल से अलग हो जाता है, परंतु अमरत्व से नहीं।",
+          "te": "మూడుకళ్ళవాడైన పరమేశ్వరుని, సుగంధముతో నిండి, పోషణను కలిగించే వాడిని మేము ఆరాధిస్తాము. పండిన దోసకాయ వేళి నుండి విడిపోయినట్లు, మృత్యు బంధనాలనుండి మమ్మల్ని విడిపించి, అమృతత్వాన్ని మాకు అనుగ్రహించాలి."
+        },
+        "audioUrl": "/audio/stotram_2.mp3"
+      }
+    ]
+  },
+  {
+    "deities": ["shiva"],
     "scripture": "Mantra",
     "title": "Om Namah Shivaya",
-    "originalText": "ॐ नमः शिवाय",
-    "transliteration": "oṁ namaḥ śivāya",
-    "meaning": {
-      "en": "A salutation to Shiva, one of the most popular Hindu mantras and the most important mantra in Shaivism.",
-      "hi": "शिव को नमस्कार, शैव धर्म में सबसे महत्वपूर्ण और सबसे लोकप्रिय हिंदू मंत्रों में से एक।",
-      "te": "శివునికి నమస్కారం, శైవమతంలో అత్యంత ముఖ్యమైన మరియు అత్యంత ప్రజాదరణ పొందిన హిందూ మంత్రాలలో ఒకటి."
-    },
-    "audioUrl": "/audio/stotram_2.mp3"
+    "slokas": [
+      {
+        "id": 1,
+        "originalText": "ॐ नमः शिवाय",
+        "transliteration": {
+          "en": "oṁ namaḥ śivāya",
+          "te": "ఓం నమః శివాయ"
+        },
+        "meaning": {
+          "en": "I bow to Shiva — the supreme consciousness, the auspicious one, who is the inner Self of all.",
+          "hi": "मैं शिव को नमस्कार करता हूँ — जो परम चेतना, कल्याणस्वरूप और सभी के भीतर आत्मा हैं।",
+          "te": "శివునికి నమస్కారం — ఆయన పరమ చైతన్యం, శుభమూర్తి, సమస్తజీవుల అంతర్మూర్తి."
+        },
+        "audioUrl": "/audio/stotram_2.mp3"
+      }
+    ]
   },
   {
-    "id": 3,
-    "deity": "shiva",
-    "scripture": "Rigveda",
-    "title": "Maha Mrityunjaya Mantra",
-    "originalText": "ॐ त्र्यम्बकं यजामहे सुगन्धिं पुष्टिवर्धनम्\nउर्वारुकमिव बन्धनान्मृत्योर्मुक्षीय माऽमृतात्॥",
-    "transliteration": "oṁ tryambakaṁ yajāmahe sugandhiṁ puṣṭivardhanam\nurvārukamiva bandhanānmṛtyormukṣīya mā'mṛtāt.",
-    "meaning": {
-      "en": "We worship the three-eyed One, who is fragrant and who nourishes all. Like a cucumber from its stem, may I be liberated from death, not from immortality.",
-      "hi": "हम त्रिनेत्रधारी की पूजा करते हैं, जो सुगंधित हैं और जो सभी का पोषण करते हैं। जैसे खीरा अपने तने से मुक्त हो जाता है, वैसे ही मैं मृत्यु से मुक्त हो जाऊं, अमरता से नहीं।",
-      "te": "మూడు కన్నుల దేవుడు, సుగంధ పరిమళుడు, సర్వ పోషకుడు అయిన ఆయన్ని మేము పూజిస్తున్నాము. దోసకాయ దాని తొడిమ నుండి ఎలా విడిపోతుందో, అలాగే నేను మృత్యువు నుండి విముక్తి పొందుతాను, అమరత్వం నుండి కాదు."
+    "deities": ["shiva"],
+    "scripture": "Stotram",
+    "title": "Dakshinamurti Stotram",
+    "slokas": [
+      {
+      "id": 1,
+      "originalText": "विश्वं दर्पणदृश्यमाननगरीतुल्यं निजान्तर्गतं\nपश्यन्नात्मनि मायया बहिरिवोद्भूतं यथा निद्रया।\nयः साक्षात्कुरुते प्रबोधसमये स्वात्मानमेवाद्वयं\nतस्मै श्रीगुरुमूर्तये नम इदं श्रीदक्षिणामूर्तये॥",
+      "transliteration": {
+        "en": "viśvaṁ darpaṇa-dṛśya-māna-nagarī-tulyaṁ nijāntargataṁ\npaśyann-ātmani māyayā bahir-ivo-dbūtaṁ yathā nidrayā |\nyaḥ sākṣātkurute prabodha-samaye svātmānam-evādvayaṁ\ntasmai śrī-gurumūrtaye nama idaṁ śrī-dakṣiṇāmūrtaye ||",
+        "te": "విశ్వం దర్పణదృష్టమాన నగరీ తుల్యం నిజాంతర్గతం\nపశ్యన్నాత్మని మాయయా బహిరివోద్భూతం యథా నిద్రయా|\nయః సాక్షాత్కురుతే ప్రబోధ సమయే స్వాత్మానమేవాద్వయం\nతస్మై శ్రీ గురుమూర్తయే నమ ఇదం శ్రీదక్షిణామూర్తయే||"
+      },
+      "meaning": {
+        "en": "Salutations to that Dakshinamurti, the Guru, who reveals the non-dual Self that, though appearing as the diverse world like a city seen in a mirror, actually exists within oneself, projected outward by illusion like in a dream — and is realized as one's own Self at the moment of awakening.",
+        "hi": "उस श्रीदक्षिणामूर्ति को नमस्कार है, जो गुरु के रूप में अपने अद्वैत स्वरूप का साक्षात्कार कराते हैं। यह जगत जैसे दर्पण में दिखाई देने वाला नगर है, जो वास्तव में आत्मा के भीतर है, पर माया के प्रभाव से बाहर प्रतीत होता है — जैसे स्वप्न में होता है।",
+        "te": "ఆ శ్రీదక్షిణామూర్తిని నమస్కరిస్తున్నాను — జగత్తు అద్దంలో ప్రతిబింబించిన పట్టణంలా కనిపించడంతోకూడిన, నిజానికి మన అంతరాత్మలోనే ఉన్నది, కానీ మాయవశాత్ బహిరంగంగా ప్రదర్శించబడినదిగా అనిపిస్తుంది. సత్యజ్ఞాన సమయమునందు అది తన స్వరూపంగా అవగతమవుతుంది."
+      },
+      "audioUrl": "/audio/dakshinamurti_1.mp3"
     },
-    "audioUrl": "/audio/placeholder.mp3"
+    {
+      "id": 2,
+      "originalText": "बीजस्यान्तरिवाङ्कुरो जगदिदं प्राङ्निर्विकल्पं पुनः\nमायाकल्पितदेशकालकलनावैचित्र्यचित्रीकृतम्।\nमायावीव विजृम्भयत्यपि महायोगीव यः स्वेच्छया\nतस्मै श्रीगुरुमूर्तये नम इदं श्रीदक्षिणामूर्तये॥",
+      "transliteration": {
+        "en": "bījasyaāntari vāṅkuro jagad idaṁ prāṅnirvikalpaṁ punaḥ\nmāyā kalpita deśa-kāla-kalanā-vaicitrya-citrīkṛtam |\nmāyāvīva vijṛmbhayaty api mahāyogīva yaḥ svecchayā\ntasmai śrī-gurumūrtaye nama idaṁ śrī-dakṣiṇāmūrtaye ||",
+        "te": "బీజస్యాంతరివాంకురో జగదిదం ప్రాంగ్నిర్వికల్పం పునః\nమాయాకల్పితదేశకాలకలనావైచిత్ర్యచిత్రీకృతం|\nమాయావీవ విజృంభయత్యపి మహాయోగీవ యః స్వేచ్ఛయా\nతస్మై శ్రీగురుమూర్తయే నమ ఇదం శ్రీదక్షిణామూర్తయే||"
+      },
+      "meaning": {
+        "en": "Like the sprout exists unmanifest within the seed, this world was unmanifest before creation. Then, by the power of Māyā, space, time, and diversity appear. The one who projects this illusion like a magician or a great yogi, to that Guru in the form of Dakshinamurti, I offer my salutations.",
+        "hi": "जैसे बीज के भीतर अंकुर छिपा होता है, वैसे ही यह जगत पहले अव्यक्त था। माया की कल्पना से देश, काल और विविधता उत्पन्न होती है। जो स्वयं की इच्छा से इस जग को प्रस्फुटित करते हैं, उस श्रीदक्षिणामूर्ति को नमस्कार है।",
+        "te": "బీజంలో అంగురం ఉండే విధంగా, ఈ జగత్తు మొదట అప్రకాశితంగా ఉండింది. మాయా వల్ల దేశం, కాలం, వైవిధ్యం కలుగుతాయి. మాయగాడిలా లేదా మహాయోగిలా, తన స్వేచ్ఛతో జగత్తుని ప్రదర్శించేవాడైన గురుమూర్తిగా ఉన్న దక్షిణామూర్తికి నమస్కారం."
+      },
+      "audioUrl": "/audio/dakshinamurti_2.mp3"
+    },
+    {
+      "id": 3,
+      "originalText": "यस्यैव स्फुरणं सदात्मकमसत्कल्पार्थकं भासते\nसाक्षात्तत्त्वमसीति वेदवचसा यो बोधयत्याश्रितान्।\nयत्साक्षात्करणाद्भवेन्न पुनरावृत्तिर्भवाम्भोनिधौ\nतस्मै श्रीगुरुमूर्तये नम इदं श्रीदक्षिणामूर्तये॥",
+      "transliteration": {
+        "en": "yasyaiva sphuraṇaṁ sadātmakam asat kalpārthakaṁ bhāsate\nsākṣāt tat tvam asi iti veda vacasā yo bodhayaty āśritān |\nyat sākṣāt karaṇād bhaven na punar āvṛttir bhavāmbhonidhau\ntasmai śrī-gurumūrtaye nama idaṁ śrī-dakṣiṇāmūrtaye ||",
+        "te": "యస్యైవ స్ఫురణం సదాత్మకమసత్కల్పార్థకం భాసతే\nసాక్షాత్తత్త్వమసీతి వేదవచసా యో బోధయత్యాశ్రితాన్|\nయత్సాక్షాత్కరణాద్భవేన్న పునరావృత్తిర్భవాంభోనిధౌ\nతస్మై శ్రీగురుమూర్తయే నమ ఇదం శ్రీదక్షిణామూర్తయే||"
+      },
+      "meaning": {
+        "en": "Salutations to that Guru, Dakshinamurti, whose mere radiance reveals the Self as existence-consciousness, and makes the illusory world appear real. He teaches the truth of the mahāvākya 'Tat Tvam Asi' (That Thou Art) to the seekers, and by whose realization there is no return to the ocean of rebirth.",
+        "hi": "उस श्रीदक्षिणामूर्ति को नमस्कार है, जिनकी स्फुरणा से सत्स्वरूप आत्मा प्रकाशित होती है और असत् (माया) भी वास्तविक प्रतीत होती है। जो वेदवाक्य ‘तत्त्वमसि’ के माध्यम से शरणागतों को आत्मज्ञान प्रदान करते हैं, और जिनके साक्षात्कार से पुनर्जन्म के भवसागर में लौटना नहीं होता।",
+        "te": "యావరి స్ఫురణ వల్ల సచ్చిదానంద స్వరూపమైన ఆత్మ ప్రకాశిస్తుంది, మరియు అసత్ అయిన ఈ జగత్తు కూడా నిజమైనట్టు అనిపిస్తుంది. 'తత్త్వమసి' అనే వేదవాక్యంతో శిష్యులను ఆత్మజ్ఞానంలో స్థిరపరచే దక్షిణామూర్తి గురువుని నమస్కరిస్తున్నాను. ఆయన స్వరూపాన్ని సాక్షాత్కరించినవాడు మరలా జనన మరణాల సముద్రంలో పడడు."
+      },
+      "audioUrl": "/audio/dakshinamurti_3.mp3"
+    },
+    {
+      "id": 4,
+      "originalText": "नानाच्छिद्रघटोदरस्थितमहादीपप्रभा भास्वरं\nज्ञानं यस्य तु चक्षुरादिकरणद्वारा वहिः स्पन्दते ।\nजानामीति तमेव भान्तमनुभात्येतत्समस्तं जगत्\nतस्मै श्रीगुरुमूर्तये नम इदं श्रीदक्षिणामूर्तये ॥",
+      "transliteration": {
+        "en": "nānāchchidra-ghaṭo-darasthita mahādīpa-prabhā bhāsvaraṁ\njñānaṁ yasya tu cakṣur ādikaraṇa-dvārā vahiḥ spandate |\njānāmīti tameva bhāntamanubhāty etat samastaṁ jagat\ntasmai śrī-gurumūrtaye nama idaṁ śrī-dakṣiṇāmūrtaye ||",
+        "te": "నానాచ్చిద్రఘటోదరస్థితమహాదీపప్రభా భాస్వరం\nజ్ఞానం యస్య తు చక్షురాదికారణ ద్వారా వహిః స్పందతే|\nజానామితి తమేవ భాంతమనుభాత్యేతత్సమస్తం జగత్\nతస్మై శ్రీగురుమూర్తయే నమ ఇదం శ్రీదక్షిణామూర్తయే||"
+      },
+      "meaning": {
+        "en": "Salutations to that Guru, Dakshinamurti, whose luminous knowledge shines like a great lamp within the cavity of a cracked pot, whose eyes perceive through the sensory organs, and who manifests the entire universe as ‘I know’ — the very essence of consciousness.",
+        "hi": "उस श्रीदक्षिणामूर्ति को नमस्कार है, जिनका ज्ञान cracked (छिद्रयुक्त) मटके के भीतर स्थित विशाल दीपक की तरह प्रखर प्रकाशमान है, जिनकी दृष्टि इन्द्रियों के माध्यम से जगत को देखती है, और जो 'मैं जानता हूँ' के रूप में सम्पूर्ण जगत को प्रकट करते हैं।",
+        "te": "నానా రంధ్రాలున్న గడ మునకలో వెలిగే గొప్ప దీపం లాగా ఆయన జ్ఞానం ప్రకాశిస్తోంది, ఆయన కళ్ల ద్వారా అర్థం చేసుకునే సర్వం 'నేను తెలుసుకుంటున్నాను' అని తెలియచేస్తుంది. ఆ పరిణామాన్ని చూపించే శ్రీదక్షిణామూర్తి గురువుకు నమస్కారం."
+      },
+      "audioUrl": "/audio/dakshinamurti_4.mp3"
+    },
+    {
+      "id": 5,
+      "originalText": "देहं प्राणमपीन्द्रियाण्यपि चलां बुद्धिं च शून्यं विदुः\nस्त्रीबालान्धजडोपमास्त्वहमिति भ्रान्ता भृशं वादिनः ।\nमायाशक्तिविलासकल्पितमहाव्यामोहसंहारिणे\nतस्मै श्रीगुरुमूर्तये नम इदं श्रीदक्षिणामूर्तये ॥",
+      "transliteration": {
+        "en": "dehaṁ prāṇam apīndriyāṇy api calāṁ buddhiṁ ca śūnyaṁ viduḥ\nstrībālandhajāḍopamāstvaham iti bhrāntā bhṛśaṁ vādinah |\nmāyāśaktivilāsakalpitamahāvyāmoha-saṁhāriṇe\ntasmai śrī-gurumūrtaye nama idaṁ śrī-dakṣiṇāmūrtaye ||",
+        "te": "దేహం ప్రాణమపీంద్రియాణ్యపి చలాం బుద్ధिं చ శూన్యం విదుః\nస్త్రీబాలాన్ధజడోపమాస్త్వహమితి భ్రాంతా భృషం వాదినః|\nమాయాశక్తివిలాసకల్పితమహావ్యామోహసంహారిణే\nతస్మై శ్రీగురుమూర్తయే నమిదం శ్రీదక్షిణామూర్తయే||"
+      },
+      "meaning": {
+        "en": "Salutations to that Guru, Dakshinamurti, who destroys the great delusion of those who mistakenly argue that the body, life force, senses, mind, and intellect are all separate, and who compares the Self to the inertness of a woman, child, or stone, while in truth He is the remover of the great delusion created by the play of Māyā.",
+        "hi": "उस श्रीदक्षिणामूर्ति को नमस्कार है, जो उन लोगों की महान भ्रांति को दूर करते हैं जो शरीर, प्राण, इंद्रियां, बुद्धि और मन को पृथक् समझते हैं और स्वयं को स्त्री, बालक या पाषाण के समान अज्ञानी मानते हैं। वे माया के खेल द्वारा उत्पन्न इस महा मोह को नष्ट करते हैं।",
+        "te": "దేహం, ప్రాణం, ఇంద్రియాలు, మనసు, బుద్ధి ఇవన్నీ వేరువేరుగా ఉన్నాయి అని అబద్ధంగా భావించే వారిని తారించే గురువుగా ఉన్నారు. స్వయంగా తనను స్త్రీ, బాళ, రాళ్ళు వంటి అజీవులుగా భావించే భ్రమను దూరం చేసే ఆయన మాయాశక్తి యొక్క మహా మోహాన్ని నాశనం చేస్తున్నాడు. శ్రీదక్షిణామూర్తిగురువుకు నమస్కారం."
+      },
+      "audioUrl": "/audio/dakshinamurti_5.mp3"
+    },
+    {
+      "id": 6,
+      "originalText": "राहुग्रस्तदिवाकरेन्दुसदृशो मायासमाच्छादनात्\nसन्मात्रः करणोपसंहरणतो योऽभूत्सुषुप्तः पुमान् ।\nप्रागस्वाप्समिति प्रबोधसमये यः प्रत्यभिज्ञायते\nतस्मै श्रीगुरुमूर्तये नम इदं श्रीदक्षिणामूर्तये ॥",
+      "transliteration": {
+        "en": "rāhugrasta-divākar-endu-sadṛśo māyā-samācchādanāt\nsanmātraḥ karaṇa-upasaṁharaṇato yo ’bhūt suṣuptaḥ pumān |\nprāgasvāpsam iti prabodha-samaye yaḥ pratyabhijñāyate\ntasmai śrī-gurumūrtaye nama idaṁ śrī-dakṣiṇāmūrtaye ||",
+        "te": "రాహుగ్రస్తదివాకరేంద్రుసదృశో మాయాసమాచ్ఛాదనాత్\nసన్మాత్రః కారణోపసంహరణతో యోభూత్సుషుప్తః పుమాన్|\nప్రాగస్వాప్సమితి ప్రభోదసమయే యః ప్రత్యభిజ్ఞాయతే\nతస్మై శ్రీగురుమూర్తయే నమిదం శ్రీదక్షిణామూర్తయే||"
+      },
+      "meaning": {
+        "en": "Salutations to that Guru, Dakshinamurti, who is like the sun or moon afflicted by Rahu (an eclipse) obscured by Māyā, who is the pure consciousness that withdraws the instruments of cognition, appearing like a sleeper without attributes before awakening, and who is recognized at the time of awakening as the true Self.",
+        "hi": "उस श्रीदक्षिणामूर्ति को नमस्कार है, जो राहु से प्रभावित सूर्य या चंद्र की भांति माया द्वारा आवृत है, जो संपूर्ण बुद्धि को वापस ले लेता है, और जो जाग्रत होने के समय एक सूक्ष्म निद्रारूपी पुरुष के रूप में पहचाना जाता है।",
+        "te": "రాహు గ్రస్తుడైన సూర్యుడి లేదా చంద్రుని లాగా మాయ చేతు తాకబడి దాగిపోతున్నాడు. జ్ఞానాస్థానాలను ఉపసంహరించి, స్వభావ రహితమైన నిద్రలో ఉన్న వాడు, అతని సత్యం జాగరణ సమయంలో గుర్తించబడుతుంది. శ్రీదక్షిణామూర్తిగురువుకు నమస్కారం."
+      },
+      "audioUrl": "/audio/dakshinamurti_6.mp3"
+    },
+    {
+      "id": 7,
+      "originalText": "बाल्यादिष्वपि जाग्रदादिषु तथा सर्वास्ववस्थास्वपि\nव्यावृत्तास्वनुवर्तमानमहमिति अन्तः स्फुरन्तं सदा ।\nस्वात्मानं प्रकटीकरोति भजतां यो मुद्रयाभद्रया\nतस्मै श्रीगुरुमूर्तये नम इदं श्रीदक्षिणामूर्तये ॥",
+      "transliteration": {
+        "en": "bālyādiṣv api jāgradādiṣu tathā sarvāsva vasthāsv api\nvyāvṛttāsvnuvartamānam aham iti antaḥ sphurantaṁ sadā |\nsvātmānaṁ prakaṭīkaroti bhajatāṁ yo mudrāyābhadrayā\ntasmai śrī-gurumūrtaye nama idaṁ śrī-dakṣiṇāmūrtaye ||",
+        "te": "బాల్యాదిష్వపి జాగ్రదాదిషు తథా సర్వాస్వవస్థాస్వపి\nవ్యావృత్తాస్నువర్తమానమహమితి అంతః స్ఫురంతం సదా |\nస్వాత్మానం ప్రకటీకరోతి భజతాం యో ముద్రాయాభద్రయా\nతస్మై శ్రీగురుమూర్తయే నమిదం శ్రీదక్షిణామూర్తయే||"
+      },
+      "meaning": {
+        "en": "Salutations to that Guru, Dakshinamurti, who reveals within the devotee the constant inner sense of 'I am' through all states—childhood, waking, and others—always manifesting the Self, and who liberates from misfortunes by His grace.",
+        "hi": "उस श्रीदक्षिणामूर्ति को नमस्कार है, जो बाल्य, जाग्रत और अन्य सभी अवस्थाओं में भक्त के अंतर्मन में ‘अहम्’ की अनुभूति निरंतर जगाता है, और जो अपनी कृपा से सभी विपत्तियों से मुक्ति प्रदान करता है।",
+        "te": "బాల్యం, జాగృతి, ఇతర అన్ని స్థితులలో కూడా భక్తులలో “నేను” అనే అంతర్మనోభావాన్ని సదా స్పష్టం చేయనివాడికి, మరియు తన అనుగ్రహంతో శుభాంతకాలను తొలగించేవాడికి నమస్కారాలు. శ్రీదక్షిణామూర్తిగురువుకు నమస్కారం."
+      },
+      "audioUrl": "/audio/dakshinamurti_7.mp3"
+    },
+    {
+      "id": 8,
+      "originalText": "विश्वं पश्यति कार्यकारणतया स्वस्वामिसम्बन्धतः\nशिष्याचार्यतया तथैव पितृपुत्राद्यात्मना भेदतः ।\nस्वप्ने जाग्रति वा य एष पुरुषो मायापरिभ्रामितः\nतस्मै श्रीगुरुमूर्तये नम इदं श्रीदक्षिणामूर्तये ॥",
+      "transliteration": {
+        "en": "viśvaṁ paśyati kāryakāraṇatayā svasvāmisambandhataḥ\nśiṣyācāryatayā tathaiva pitṛputrādyātmanā bhedataḥ |\nsvapne jāgrati vā ya eṣa puruṣo māyāparibhrāmitah\ntasmai śrī-gurumūrtaye nama idaṁ śrī-dakṣiṇāmūrtaye ||",
+        "te": "విశ్వం పశ్యతి కార్యకారణతయా స్వస్వామిసంబంధతః\nశిష్యాచార్యతయా తథైవ పితృపుత్రాద్యాత్మనాభేదతః |\nస్వప్నే జాగ్రతి వా య ఏష పురుషో మాయాపరిభ్రమితః\nతస్మై శ్రీగురుమూర్తయే నమిదం శ్రీదక్షిణామూర్తయే||"
+      },
+      "meaning": {
+        "en": "Salutations to that Guru, Dakshinamurti, who sees the universe in terms of cause and effect, recognizing the relationship between master and servant, teacher and disciple, father and son, and who perceives this both in waking and dreaming states, even though the person is deluded by Māyā.",
+        "hi": "उस श्रीदक्षिणामूर्ति को नमन है, जो कारण-फल के रूप में संसार को देखता है, स्वामी-प्रभु, गुरु-शिष्य, पिता-पुत्र के संबंध को समझता है, और जो जाग्रत और स्वप्न दोनों अवस्थाओं में इस भ्रमित पुरुष को देखता है।",
+        "te": "కార్యం-కారణ తత్వాన్ని, స్వామి-దాస సంబంధాలను, గురు-శిష్య సంబంధాలను, తండ్రి-కుమార సంబంధాలను గమనిస్తూ, మాయా వలన భ్రమలో ఉన్న వ్యక్తిని జాగృతి మరియు స్వప్న స్థితులలో గమనించే శ్రీ దక్షిణామూర్తి గురువుకు నమస్కారం."
+      },
+      "audioUrl": "/audio/dakshinamurti_8.mp3"
+    },
+    {
+      "id": 9,
+      "originalText": "भूरम्भांस्यनलोऽनिलोऽम्बरमहर्नाथो हिमांशु पुमान्\nइत्याभाति चराचरात्मकमिदं यस्यैव मूर्त्यष्टकम्\nनान्यत् किञ्चन विद्यते विमृशतां यस्मात्परस्माद्विभोः\nतस्मै श्रीगुरुमूर्तये नम इदं श्रीदक्षिणामूर्तये ॥",
+      "transliteration": {
+        "en": "bhūram bhāṁsya nalo ’nilo ’mbara mahar nātho himāṁśu pumān\nity ābhāti carācarātmakam idaṁ yasyai va mūrtyaṣṭakam\nnānyat kiñcana vidyate vimṛśatāṁ yasmāt parasmād vibhoḥ\ntasmai śrī-gurumūrtaye nama idaṁ śrī-dakṣiṇāmūrtaye ||",
+        "te": "భూరంభాంస్యనలోనిలోంబరమహర్నాథో హిమాంశు పుమాన్\nఇత్యాభాతి చరాచరాత్మకమిదం యస్యైవ మూర్త్యష్టకం\nనాన్యత్ కిఞ్చన విద్యతే విమృషతాం యస్మాత్పరస్మాద్విభోః\nతస్మై శ్రీగురుమూర్తయే నమిదం శ్రీదక్షిణామూర్తయే||"
+      },
+      "meaning": {
+        "en": "Salutations to that Guru, Dakshinamurti, who is the lord of earth, sky, fire, air, water, moon, and sun; from whom the eight forms of the universe—animate and inanimate—shine forth; beyond whom there is nothing else to be sought or contemplated.",
+        "hi": "उस श्रीदक्षिणामूर्ति को नमस्कार है, जो पृथ्वी, आकाश, अग्नि, वायु, जल, चंद्र और सूर्य का स्वामी है; जिनसे ब्रह्मांड के आठ स्वरूप—सजीव और निर्जीव—प्रकाशित होते हैं; जिनके परे कुछ भी नहीं है।",
+        "te": "భూమి, ఆకాశం, అగ్ని, గాలి, నీరు, చంద్రుడు, సూర్యుడు వంటి ప్రకృతి మూలక వ్యవస్థల అధిపతి అయిన, అందులోని చరాచర రూపాలను ప్రతిబింబించే, ఆయనకంటే ఎవరూ లేకపోవడం విశ్వసింపబడే శ్రీదక్షిణామూర్తి గురువుకు నమస్కారం."
+      },
+      "audioUrl": "/audio/dakshinamurti_9.mp3"
+    },
+    {
+      "id": 10,
+      "originalText": "सर्वात्मत्वमिति स्फुटीकृतमिदं यस्मादमुष्मिन् स्तवे\nतेनास्य श्रवणात्तदर्थमननाद्ध्यानाच्च संकीर्तनात् ।\nसर्वात्मत्वमहाविभूतिसहितं स्यादीश्वरत्वं स्वतः\nसिद्ध्येत्तत्पुनरष्टधा परिणतं चैश्वर्यमव्याहतम् ॥",
+      "transliteration": {
+        "en": "sarvātmatvamitī sphuṭīkṛtam idaṁ yasmād amuṣmin stave\ntenāsya śravaṇāttadarthamananād dhyānācca saṁkīrtanāt |\nsarvātmatvamahāvibhūtisahitaṁ syād īśvaratvaṁ svataḥ\nsiddhyettatpunaraṣṭhadā pariṇataṁ ca iṣvaryam avyāhatam ||",
+        "te": "సర్వాత్మత్వమితి స్పుటీకృతమిదం యస్మాదముష్మిన్ స్థవే\nతెనాస్య శ్రవణాత్ తదర్థమననాధ్యానాచ్చ సంకీర్తనాత్ |\nసర్వాత్మత్వమహావిభూతిసహితం స్యాదిశ్వరత్వం స్వతః\nసిద్ధ్యేత్తత్పునరష్టధా పరిణతం చైశ్వర్యమవ్యాహతమ్ ||"
+      },
+      "meaning": {
+        "en": "Salutations to that Guru, Dakshinamurti, by whose praise the clear understanding of the all-pervading Self is established; through hearing, pondering, meditation, and singing of this hymn, the supreme lordship accompanied by great divine powers manifests naturally; success is achieved repeatedly, and His sovereign glory remains uninterrupted.",
+        "hi": "उस श्रीदक्षिणामूर्ति को नमन है, जिनकी स्तुति से सर्वव्यापक आत्मा की स्पष्ट समझ स्थापित होती है; इस स्तोत्र को सुनने, चिंतन करने, ध्यान करने और कीर्तन करने से महाशक्ति सहित ईश्वरत्व स्वाभाविक रूप से प्रकट होता है; बार-बार सिद्धि प्राप्त होती है और उनकी ईश्वरीय महिमा कभी कम नहीं होती।",
+        "te": "ఈ గానం వలన సర్వాత్మత్వం స్పష్టంగా అవగాహన కాబడుతుంది. విని, ఆలోచించి, ధ్యానించి, కీర్తించటం ద్వారా మహాశక్తి సహితమైన ఐశ్వర్యం సహజంగా వెలుగుతుంది. ఇది పునర్వార విజయం సాధించి, ఎల్లప్పుడూ నిలుస్తుంది. శ్రీదక్షిణామూర్తిగురువుకు నమస్కారం."
+      },
+      "audioUrl": "/audio/dakshinamurti_10.mp3"
+    }
+
+    ]
   },
   {
-    "id": 4,
-    "deity": "shiva",
-    "scripture": "Shiva Tandava Stotram",
-    "title": "Verse 1",
-    "originalText": "जटाटवीगलज्जलप्रवाहपावितस्थले\nगलेऽवलम्ब्य लम्बितां भुजङ्गतुङ्गमालिकाम्।\nडमड्डमड्डमड्डमन्निनादवड्डमर्वयं\nचकार चण्डताण्डवं तनोतु नः शिवः शिवम्॥",
-    "transliteration": "jaṭāṭavīgajjalapravāhapāvitasthale\ngale'valambya lambitāṁ bhujaṅgatuṅgamālikām,\nḍamaḍḍamaḍḍamaḍḍamanninādavaḍḍamarvayaṁ\ncakāra caṇḍatāṇḍavaṁ tanotu naḥ śivaḥ śivam.",
-    "meaning": {
-      "en": "From the forest of his matted hair, water flows and sanctifies the ground. On his neck, a high garland of the serpent. The damaru drum emits the sound 'damat, damat, damat, damat'. Shiva, do the auspicious Tandava dance. May he bless us.",
-      "hi": "उनकी जटाओं के वन से जल प्रवाहित होकर भूमि को पवित्र करता है। उनके गले में ऊँची सर्पमाला है। डमरू से 'डमट, डमट, डमट, डमट' की ध्वनि निकलती है। शिव auspicious तांडव नृत्य करें। वे हमें आशीर्वाद दें।",
-      "te": "ఆయన జటల వనంలో నుండి నీరు ప్రవహించి భూమిని పవిత్రం చేస్తుంది. ఆయన మెడలో ఎత్తైన పాము హారం ఉంది. డమరుకం నుండి 'డమట్, డమట్, డమట్, డమట్' అనే శబ్దం వస్తుంది. శివుడు మంగళకరమైన తాండవం చేయాలి. ఆయన మనకు ఆశీర్వదించాలి."
-    },
-    "audioUrl": "/audio/placeholder.mp3"
+    "deities": ["Shiva"],
+    "scripture": "Stotram",
+    "title": "Nirvāṇa Ṣaṭkam",
+    "slokas": [
+      {
+        "id": 1,
+        "originalText": "मनो बुध्यहङ्कार चित्तानि नाहं\nन च श्रोत्र जिह्वे न च घ्राणनेत्रे ।\nन च व्योम भूमिर्-न तेजो न वायुः\nचिदानन्द रूपः शिवोऽहं शिवोऽहम् ॥ 1 ॥",
+        "transliteration": {
+          "en": "mano budhyahaṅkāra cittāni nāhaṁ\nna ca śrotra jihve na ca ghrāṇa netre\nna ca vyoma bhūmir na tejo na vāyuḥ\ncidānanda rūpaḥ śivo'ham śivo'ham",
+          "te": "మनो బుధ్యహంకార చిత్తాని నాహం\nన చ శ్రోత్ర జిహ్వే న చ ఘ్రాణ నేత్రే |\nన చ వ్యోమ భూమిర్-న తేజో న వాయుః\nచిదానంద రూపః శివోఽహం శివోఽహం ॥ 1 ॥"
+        },
+        "meaning": {
+          "en": "I am not the mind, intellect, ego, or memory; nor am I the ears, tongue, nose, or eyes; nor am I the sky, earth, fire, or air; I am the form of consciousness and bliss; I am Shiva, I am Shiva.",
+          "hi": "मैं मन, बुद्धि, अहंकार या चित्त नहीं हूँ; न ही मैं श्रवण, जिह्वा, घ्राण या नेत्र हूँ; न मैं आकाश, पृथ्वी, अग्नि या वायु हूँ; मैं चेतना और आनंद का स्वरूप हूँ; मैं शिव हूँ, मैं शिव हूँ।",
+          "te": "నేను మనస్సు, బుద్ధి, అహంకారం లేదా చిత్తం కాదు; నేను చెవి, నాలుక, ముక్కు లేదా కళ్ళు కాదు; నేను ఆకాశం, భూమి, అగ్ని లేదా గాలి కాదు; నేను చైతన్యము మరియు ఆనంద రూపుడినివాడిని; నేను శివుని, నేను శివుని."
+        },
+        "audioUrl": "/audio/nirvana_satkam_1.mp3"
+      },
+      {
+        "id": 2,
+        "originalText": "न च प्राण सञ्ज्ञो न वैपञ्चवायुः\nन वा सप्तधातुर्-न वा पञ्चकोशाः ।\nनवाक्पाणि पादौ न चोपस्थ पायू\nचिदानन्द रूपः शिवोऽहं शिवोऽहम् ॥ 2 ॥",
+        "transliteration": {
+          "en": "na ca prāṇa sañjño na vaipan̄cavāyuḥ\nna vā saptadhātur na vā pañcakośāḥ\nnavāk pāṇi pādau na copastha pāyū\ncidānanda rūpaḥ śivo'ham śivo'ham",
+          "te": "న చ ప్రాణ సంజ్ఞో న వైపంఛవాయుః\nన వ సప్తధాతుర్-న వ పంచకోషాః |\nనవాక్పాణి పాదౌ న చోపస్థ పాయూ\nచిదానంద రూపః శివోఽహం శివోఽహం ॥ 2 ॥"
+        },
+        "meaning": {
+          "en": "I am not the vital breath called Prāṇa, nor the five types of wind (Vāyu); nor the seven elements, nor the five sheaths; nor the nine openings (nose, mouth, etc.), nor the organs of reproduction and excretion; I am the form of consciousness and bliss; I am Shiva, I am Shiva.",
+          "hi": "मैं प्राण नहीं हूँ, न वैपञ्चवायु हूँ; न सात तत्व, न पाँच कोष; न नौ नासिका, न हाथ-पैर, न जनन और मल निकास के अंग; मैं चेतना और आनंद का स्वरूप हूँ; मैं शिव हूँ, मैं शिव हूँ।",
+          "te": "నేను ప్రాణం కాదు, వైపంచ వాయువు కాదు; నేను ఏడు ధాతులు కాదు, ఐదు కోశాలు కాదు; నేను తొమ్మిది నాసికలు, చేతులు, కాళ్లు కాదు, జనన, మల మూత్ర అవయవాలు కాదు; నేను చైతన్య రూపుడినివాడిని; నేను శివుని, నేను శివుని."
+        },
+        "audioUrl": "/audio/nirvana_satkam_2.mp3"
+      },
+      {
+        "id": 3,
+        "originalText": "न मे द्वेषरागौ न मे लोभमोहो\nमदो नैव मे नैव मात्सर्यभावः ।\nन धर्मो न चार्धो न कामो न मोक्षः\nचिदानन्द रूपः शिवोऽहं शिवोऽहम् ॥ 3 ॥",
+        "transliteration": {
+          "en": "na me dveṣarāgau na me lobhamoho\nmado naiva me naiva mātsaryabhāvaḥ\nna dharmo na chārtho na kāmo na mokṣaḥ\ncidānanda rūpaḥ śivo'ham śivo'ham",
+          "te": "న మే ద్వేషరాగౌ న మే లోభమోహో\nమదో నైవ మే నైవ మాత్సర్యభావః |\nన ధర్మో న చార్ధో న కామో న మోక్షః\nచిదానంద రూపః శివోఽహం శివోఽహం ॥ 3 ॥"
+        },
+        "meaning": {
+          "en": "I have no hatred or attachment, no greed or delusion; neither pride nor envy; neither righteousness nor wealth, neither desire nor liberation; I am the form of consciousness and bliss; I am Shiva, I am Shiva.",
+          "hi": "मुझे द्वेष और राग नहीं हैं, न ही लोभ और मोह; न गर्व और न ईर्ष्या; न धर्म, न अर्थ, न काम और न मोक्ष; मैं चेतना और आनंद का स्वरूप हूँ; मैं शिव हूँ, मैं शिव हूँ।",
+          "te": "నాకు ద్వేషం, రాగం లేదు; నాకు లాభ మోహం లేదు; గర్వం మరియు ఇర్ష్య లేదు; నేను ధర్మం, ఆర్థికం, కామం, మోక్షం కాదు; నేను చైతన్య రూపుడిని, ఆనందం; నేను శివునిని, నేను శివునిని."
+        },
+        "audioUrl": "/audio/nirvana_satkam_3.mp3"
+      },
+      {
+        "id": 4,
+        "originalText": "न पुण्यं न पापं न सौख्यं न दुःखं\nन मन्त्रो न तीर्थं न वेदा न यज्ञः ।\nअहं भोजनं नैव भोज्यं न भोक्ता\nचिदानन्द रूपः शिवोऽहं शिवोऽहम् ॥ 4 ॥",
+        "transliteration": {
+          "en": "na puṇyaṁ na pāpaṁ na saukhyaṁ na duḥkhaṁ\nna mantro na tīrthaṁ na vedā na yajñaḥ\nahaṁ bhojanaṁ naiva bhojyaṁ na bhoktā\ncidānanda rūpaḥ śivo'ham śivo'ham",
+          "te": "న పుణ్యం న పాపం న సౌఖ్యం న దుఃఖం\nన మంత్రో న తీర్థం న వేదా న యజ్ఞః |\nఅహం భోజనం నైవ భోజ్యం న భోక్తా\nచిదానంద రూపః శివోఽహం శివోఽహం ॥ 4 ॥"
+        },
+        "meaning": {
+          "en": "I am neither virtue nor sin, neither pleasure nor pain; neither mantra, pilgrimage, Vedas, nor sacrifice; I am neither the food nor the eater nor the one for whom the food is eaten; I am the form of consciousness and bliss; I am Shiva, I am Shiva.",
+          "hi": "मैं न पुण्य हूँ न पाप, न सुख हूँ न दुःख; न मंत्र, न तीर्थ, न वेद, न यज्ञ; मैं न भोजन हूँ, न भोज्य हूँ, न भोक्ता हूँ; मैं चेतना और आनंद का स्वरूप हूँ; मैं शिव हूँ, मैं शिव हूँ।",
+          "te": "నేను పుణ్యం కాదు, పాపం కాదు, సుఖం కాదు, దుఃఖం కాదు; నేను మంత్రం కాదు, తీర్థం కాదు, వేదాలు కాదు, యజ్ఞం కాదు; నేను ఆహారం కాదు, తినేవాడిని కాదు, తినబడేవాడిని కాదు; నేను చైతన్య రూపుడినివాడిని; నేను శివుని, నేను శివుని."
+        },
+        "audioUrl": "/audio/nirvana_satkam_4.mp3"
+      },
+      {
+        "id": 5,
+        "originalText": "न मृत्युर्न शङ्का न मे जाति भेदः\nपिता नैव मे नैव माता न जन्मः ।\nन बन्धुर्-न मित्रं गुरुर्नैव शिष्यः\nचिदानन्द रूपः शिवोऽहं शिवोऽहम् ॥ 5 ॥",
+        "transliteration": {
+          "en": "na mṛtyurna śaṅkā na me jāti bhedaḥ\npitā naiva me naiva mātā na janmaḥ\nna bandhur na mitraṁ gururnaiva śiṣyaḥ\ncidānanda rūpaḥ śivo'ham śivo'ham",
+          "te": "న మృత్యుర్ న శఙ్కా న మే జాతి భేదః\nపితా నైవ మే నైవ మాతా న జన్మః |\nన బంధుర్-న మిత్రం గురునైవ శిష్యః\nచిదానంద రూపః శివోఽహం శివోఽహం ॥ 5 ॥"
+        },
+        "meaning": {
+          "en": "I have no fear of death, nor any caste distinction; neither father nor mother, nor birth; neither relatives, friends, teachers, nor disciples; I am the form of consciousness and bliss; I am Shiva, I am Shiva.",
+          "hi": "मुझे मृत्यु का भय नहीं है, न कोई जाति भेद; न पिता न माता, न जन्म; न बंधु, न मित्र, न गुरु, न शिष्य; मैं चेतना और आनंद का स्वरूप हूँ; मैं शिव हूँ, मैं शिव हूँ।",
+          "te": "నాకు మరణ భయం లేదు, నా జాతి వివక్ష లేదు; నాకు తండ్రి లేదా తల్లి లేదా జన్మ లేదు; నాకు బంధువులు, స్నేహితులు, గురువులు, శిష్యులు లేరు; నేను చైతన్య రూపుడినివాడిని; నేను శివుని, నేను శివుని."
+        },
+        "audioUrl": "/audio/nirvana_satkam_5.mp3"
+      },
+      {
+        "id": 6,
+        "originalText": "अहं निर्विकल्पो निराकार रूपो\nविभूत्वाच्च सर्वत्र सर्वेन्द्रियाणाम् ।\nन वा बन्धनं नैवर्-मुक्ति न बन्धः ।\nचिदानन्द रूपः शिवोऽहं शिवोऽहम् ॥ 6 ॥",
+        "transliteration": {
+          "en": "ahaṁ nirvikalpo nirākāra rūpo\nvibhūtvācca sarvatra sarvendriyāṇām\nna vā bandhanaṁ naivar-mukti na bandhaḥ\ncidānanda rūpaḥ śivo'ham śivo'ham",
+          "te": "అహం నిర్వికల్పో నిరాకార రూపో\nవిభూత్వాచ్చ సర్వత్ర సర్వేంద్రియాణాం |\nన వ బంధనం నైవర్-ముక్తి న బంధః |\nచిదానంద రూపః శివోఽహం శివోఽహం ॥ 6 ॥"
+        },
+        "meaning": {
+          "en": "I am beyond doubt and without form; I am the essence present everywhere and in all senses; I am neither bondage nor liberation, nor the bondage itself; I am the form of consciousness and bliss; I am Shiva, I am Shiva.",
+          "hi": "मैं निर्विकल्प और निराकार हूँ; मैं सर्वत्र और समस्त इंद्रियों में विभूत हूँ; मैं न बंधन हूँ, न मुक्ति, न बंधन ही; मैं चेतना और आनंद का स्वरूप हूँ; मैं शिव हूँ, मैं शिव हूँ।",
+          "te": "నేను నిర్వికల్పుడినివాడిని, నిరాకార రూపుడినివాడిని; నేను సర్వత్ర సర్వేంద్రియాలలో విభూతిని; నేను బంధం కాదు, నేను ముక్తి కాదు, నేను బంధం కూడా కాదు; నేను చైతన్య మరియు ఆనంద రూపుడినివాడిని; నేను శివునిని, నేను శివునిని."
+        },
+        "audioUrl": "/audio/nirvana_satkam_6.mp3"
+      }
+    ]
   },
   {
-    "id": 5,
-    "deity": "shiva",
-    "scripture": "Shiva Tandava Stotram",
-    "title": "Verse 2",
-    "originalText": "धनञ्जयाहुतीकृतप्रचण्डपञ्चसायके\nधराधरेन्द्रनन्दिनीकुचाग्रचित्रपत्रके॥",
-    "transliteration": "dhanañjayāhutīkṛtapracaṇḍapañcasāyake\ndharādharēndranandinīkucāgracitrapatrakē.",
-    "meaning": {
-      "en": "The five arrows of Manmatha (Cupid) were burnt by the fire of Shiva's third eye. The daughter of the mountain (Parvati) has beautiful designs on her breast.",
-      "hi": "मन्मथ (कामदेव) के पाँच बाण शिव की तीसरी आँख की अग्नि से भस्म हो गए। पर्वतराज की पुत्री (पार्वती) के वक्षस्थल पर सुंदर चित्र बने हैं।",
-      "te": "మన్మథుని ఐదు బాణాలు శివుని మూడవ కన్ను నుండి వచ్చిన అగ్నిలో కాలిపోయాయి. పర్వతరాజు కుమార్తె (పార్వతి) యొక్క వక్షోజాలపై అందమైన అలంకరణలు ఉన్నాయి."
-    },
-    "audioUrl": "/audio/placeholder.mp3"
-  },
-  {
-    "id": 6,
-    "deity": "shiva",
-    "scripture": "Shiva Tandava Stotram",
-    "title": "Verse 3",
-    "originalText": "चलत्कुञ्चितचारुतुङ्गकुन्तलभारमण्डिते\nकपोलकन्धरे स्फुरत्कपालमालिका द्युतिमति॥",
-    "transliteration": "calatkuñcitacārutuṅgakuntalabhāramaṇḍitē\nkapōlakandharē sphuratkapālamālikā dyutimati.",
-    "meaning": {
-      "en": "The beautiful curly hair is adorned with the weight of the locks. On the neck, there is a garland of skulls that shines brilliantly.",
-      "hi": "सुंदर घुंघराले बालों को जटाओं के भार से सजाया गया है। गले में चमकदार कपालमाला है।",
-      "te": "అందమైన వంకర జుట్టు జటల భారంతో అలంకరించబడింది. మెడలో ప్రకాశించే కపాలమాల ఉంది."
-    },
-    "audioUrl": "/audio/placeholder.mp3"
-  },
-  {
-    "id": 7,
-    "deity": "shiva",
-    "scripture": "Shiva Tandava Stotram",
-    "title": "Verse 4",
-    "originalText": "स्फुरद्दिगन्तसन्ततिप्रमोदमानमानसे\nकृशोदरि लोचनत्रयायमानलोकशोकहारि॥",
-    "transliteration": "sphuraddigantasantatipramōdamānamānasē\nkṛśōdari lōcanatrayāyamānalōkaśōkahāri.",
-    "meaning": {
-      "en": "The mind is filled with joy by the continuous flow of the directions. The three eyes destroy the sorrow of the world.",
-      "hi": "दिशाओं की निरंतरता से मन आनंदित होता है। तीन नेत्र संसार के दुख को दूर करते हैं।",
-      "te": "దిశల నిరంతర ప్రవాహం మనసును ఆనందంతో నింపుతుంది. మూడు కళ్ళు లోక శోకాన్ని తొలగిస్తాయి."
-    },
-    "audioUrl": "/audio/placeholder.mp3"
-  },
-  {
-    "id": 8,
-    "deity": "shiva",
-    "scripture": "Shiva Tandava Stotram",
-    "title": "Verse 5",
-    "originalText": "प्रमथनाथपिनाकपाणिमुद्दयत्क्रोधविश्वदहनं\nकृशानुं नीलकण्ठं नमामि॥",
-    "transliteration": "pramathanāthapinākapāṇimuddayatkrōdhaviśvadahaṇaṁ\nkṛśānuṁ nīlakaṇṭhaṁ namāmi.",
-    "meaning": {
-      "en": "I bow to the blue-throated one, the lord of the goblins, who holds the Pinaka bow, who is the fire that burns the universe in anger.",
-      "hi": "मैं नीलकंठ, प्रेतों के स्वामी, पिनाक धनुषधारी, क्रोध में सम्पूर्ण सृष्टि को भस्म करने वाले शिव को नमन करता हूँ।",
-      "te": "నేను నీలకంఠుడు, భూతగణాధిపతి, పినాకధారి, కోపంలో విశ్వాన్ని దహించే అగ్నిస్వరూపుడైన శివునికి నమస్కరిస్తున్నాను."
-    },
-    "audioUrl": "/audio/placeholder.mp3"
-  },
-  {
-    "id": 9,
-    "deity": "shiva",
-    "scripture": "Shiva Tandava Stotram",
-    "title": "Verse 6",
-    "originalText": "नित्यं सङ्गतसुखदो लसत्करालभालहल्ये\nविमुक्तदुर्मतिधृति क्षिपत्क्षोणीभृल्लोलकुन्ते॥",
-    "transliteration": "nityaṁ saṅgatasukhadō lasatkarālabhālahalyē\nvimuktadurmatidhṛti kṣipatkṣōṇībhr̥llōlakuntē.",
-    "meaning": {
-      "en": "Always giving happiness to those who are united with him, with the terrible forehead that shines, who removes the burden of evil thoughts, who throws the mountain peaks.",
-      "hi": "जो उनके साथ जुड़े रहते हैं, उन्हें सदा सुख देने वाले, चमकदार भयानक ललाट वाले, बुरी बुद्धि का भार दूर करने वाले, पर्वत शिखरों को फेंकने वाले।",
-      "te": "ఆయనతో కలిసినవారికి ఎల్లప్పుడూ సుఖాన్ని ఇచ్చేవాడు, ప్రకాశించే భయంకరమైన నుదురు కలవాడు, చెడు ఆలోచనల భారాన్ని తొలగించేవాడు, పర్వత శిఖరాలను విసిరేవాడు."
-    },
-    "audioUrl": "/audio/placeholder.mp3"
-  },
-  {
-    "id": 10,
-    "deity": "shiva",
-    "scripture": "Shiva Tandava Stotram",
-    "title": "Verse 7",
-    "originalText": "जटाकटाहसम्भ्रमभ्रमन्निलिम्पनिर्झरी\nविलोलवीचिवल्लरीविराजमानमूर्धनि॥",
-    "transliteration": "jaṭākaṭāhasambhramabhramannilimpanirjharī\nvilōlavīcivallarīvirājamānamūrdhani.",
-    "meaning": {
-      "en": "The Ganga flows through the matted hair, creating waves that shine on the head like beautiful creepers.",
-      "hi": "गंगा जटाओं में बहती है, सिर पर सुंदर लताओं की तरह लहरें बनाती है।",
-      "te": "జటలలో గంగా ప్రవహిస్తూ, తలపై అందమైన లతల వలె అలలు సృష్టిస్తుంది."
-    },
-    "audioUrl": "/audio/placeholder.mp3"
-  },
-  {
-    "id": 11,
-    "deity": "shiva",
-    "scripture": "Shiva Tandava Stotram",
-    "title": "Verse 8",
-    "originalText": "धगद्धगद्धगज्ज्वलल्ललाटपट्टपावके\nकिशोरचन्द्रशेखरे रतिः प्रतिक्षणं मम॥",
-    "transliteration": "dhagaddhagaddhagajjvalallalāṭapaṭṭapāvakē\nkiśōracandraśēkharē ratiḥ pratikṣaṇaṁ mama.",
-    "meaning": {
-      "en": "The fire on the forehead burns with the sound 'dhagat, dhagat, dhagat'. My love for the young moon-crested one increases every moment.",
-      "hi": "ललाट की अग्नि 'धगट, धगट, धगट' की ध्वनि के साथ जलती है। किशोर चंद्रशेखर के प्रति मेरा प्रेम हर क्षण बढ़ता है।",
-      "te": "నుదుటిపై అగ్ని 'ధగట్, ధగట్, ధగట్' అనే శబ్దంతో మండుతుంది. యువ చంద్రశేఖరుడిపై నా ప్రేమ ప్రతి క్షణం పెరుగుతుంది."
-    },
-    "audioUrl": "/audio/placeholder.mp3"
+    "deities": ["Shiva"],
+    "scripture": "Stotram",
+    "title": "Sadyōjāta",
+    "slokas": [
+      {
+        "id": 1,
+        "originalText": "ॐ सद्योजातं प्रपद्यामि सद्योजाताय वै नमो नमः।\nभवे भवे नाति भवे भवस्व मां भवोद्भवाय नमः॥",
+        "transliteration": {
+          "en": "oṁ sadyojātaṁ prapadyāmi sadyojātāya vai namo namaḥ\nbhave bhave nāti bhave bhavasva māṁ bhavodbhavāya namaḥ",
+          "te": "ఓం సద్యోజాతం ప్రపద్యామి సద్యోజాతాయ వై నమో నమః |\nభవే భవే నాటి భవే భవస్వ మాం భవోద్భవాయ నమః ||"
+        },
+        "meaning": {
+          "en": "Om, I surrender to the newly born (Sadyōjāta), I bow again and again to the newly born one. O Lord, protect me in every existence, grant me protection from rebirth; I bow to the origin of existence.",
+          "hi": "ॐ, मैं नवजात (सद्योजात) शिव को समर्पित हूँ, बार-बार उनका नमन करता हूँ। हे प्रभु, हर जन्म में मुझे रक्षा प्रदान करें, पुनर्जन्म से बचाएं; मैं अस्तित्व के उद्भव को नमस्कार करता हूँ।",
+          "te": "ఓం, నేను సద్యోజాతుడైన ఆత్మకు సమర్పిస్తున్నాను, తరతరగా నమస్కరిస్తున్నాను. ప్రతి జన్మలో నన్ను రక్షించుము, పునర్జన్మ నుండి రక్షణ కల్పించుము; నేను భవోద్భవానికి నమస్కరించుచున్నాను."
+        },
+        "audioUrl": "/audio/sadyojata_mantra_1.mp3"
+      },
+      {
+        "id": 2,
+        "originalText": "वामदेवायनमो ज्येष्ठाय नमः श्रेष्ठाय\nनमो रुद्राय नमः कालाय नमः।\nकलविकरणाय नमो बलविकरणाय नमो\nबलाय नमो बलप्रमथनाय नमः।\nसर्वभूतदमनाय नमो मनोन्मनाय नमः॥",
+        "transliteration": {
+          "en": "vāmadevāyanamo jyeṣṭhāya namaḥ śreṣṭhāya\nnamo rudrāya namaḥ kālāya namaḥ\nkalavikaraṇāya namo balavikaraṇāya namo\nbalāya namo balapramathanāya namaḥ\nsarvabhūtadamānāya namo manonmanāya namaḥ",
+          "te": "వామదేవాయనమో జ్యేష్ఠాయ నమః శ్రేష్ఠాయ\nనమో రుద్రాయ నమః కాలాయ నమః |\nకలవికరణాయ నమో బలవికరణాయ నమో\nబలాయ నమో బలప్రమథనాయ నమః |\nసర్వభూతదమనాయ నమో మనోన్నమనాయ నమః ||"
+        },
+        "meaning": {
+          "en": "Salutations to Vamadeva, the eldest and the best; salutations to Rudra and Kala (Time). Salutations to the cause of the elements and to the one who empowers; salutations to the powerful one who subdues. Salutations to the restrainer of all beings and to the one who controls the mind.",
+          "hi": "वामदेव को नमः, जो ज्येष्ठ और श्रेष्ठ हैं; रुद्र और काल को नमः। तत्वों के कारण और शक्तिस्वरूप को नमः। सभी प्राणियों के नियंत्रक और मन को नियंत्रित करने वाले को नमः।",
+          "te": "వామదేవునికి నమస్కారము, అతను జ్యేష్ఠుడు మరియు ఉత్తముడు; రుద్రునికి మరియు కాలకల్పవంతునికి నమస్కారము. మూలకాలను కలిగించేవాడికి మరియు బలాన్ని కలిగించేవాడికి నమస్కారము. సర్వజీవులపై నియంత్రణ కలిగించేవాడికి మరియు మనస్సును నియంత్రించేవాడికి నమస్కారము."
+        },
+        "audioUrl": "/audio/shiva_namaskara_1.mp3"
+      },
+      {
+        "id": 3,
+        "originalText": "अघोरेभ्योऽथ घोरेभ्यो अघोरघोरेतरेभ्यः।\nसर्वेभ्यः सर्वशर्वेभ्यो नमस्तेऽस्तु रुद्ररूपेभ्यः॥",
+        "transliteration": {
+          "en": "aghorēbhyo'tha ghorēbhyo aghoraghorētarēbhyaḥ\nsarvēbhyaḥ sarvaśarvēbhyo namastē'stu rudrarūpēbhyaḥ",
+          "te": "అఘోరేభ్యోఽథ ఘోరేభ్యో అఘోఘోరేతరేభ్యః |\nసర్వేభ్యః సర్వశర్వేభ్యో నమస్తేఽస్తు రుద్రరూపేభ్యః ||"
+        },
+        "meaning": {
+          "en": "Salutations to the non-terrible and the terrible, to those beyond both; salutations to all and to all forms of Rudra.",
+          "hi": "अघोर और घोर, दोनों से परे जो हैं; सभी और सर्वशर्व को नमस्कार, जो रुद्ररूप हैं।",
+          "te": "అఘోర మరియు ఘోరమైనవారికి, ఆ రెండింటి కంటే మించిపోతున్నవారికి నమస్కారం; అందరికీ మరియు రుద్ర రూపాలకు నమస్కారం."
+        },
+        "audioUrl": "/audio/rudra_namaskara_1.mp3"
+      },
+      {
+        "id": 4,
+        "originalText": "तत्पुरुषाय विद्महे महादेवाय धीमहि।\nतन्नो रुद्रः प्रचोदयात्॥",
+        "transliteration": {
+          "en": "tatpuruṣāya vidmahe mahādevāya dhīmahi\ntanno rudraḥ pracodayāt",
+          "te": "తత్పురుషాయ విద్యమే మహాదేవాయ ధీమహి |\nతన్నో రుద్రః ప్రचోదయాత్ ||"
+        },
+        "meaning": {
+          "en": "We meditate on that Purusha (Supreme Being), we contemplate on Mahadeva; may that Rudra inspire and enlighten us.",
+          "hi": "हम उस पुरुष (परम पुरुष) का ज्ञान करते हैं, हम महादेव पर ध्यान लगाते हैं; वह रुद्र हमें प्रेरणा और प्रकाश दें।",
+          "te": "మేము ఆ పురుషునిపై ధ్యానం చేస్తాము, మహాదేవునిపై ఆలోచిస్తాము; ఆ రుద్రుడు మమ్మల్ని ప్రేరేపించుగాక."
+        },
+        "audioUrl": "/audio/rudra_gayatri_1.mp3"
+      },
+      {
+        "id": 5,
+        "originalText": "ईशान सर्वविद्यानामीश्वरः सर्वभूतानां ब्रह्मादिपति ब्रह्मणोऽधिपतिर्।\nब्रह्मा शिवो मे अस्तु स एव सदाशिव ओम्॥",
+        "transliteration": {
+          "en": "īśāna sarvavidyānāmīśvaraḥ sarvabhūtānāṁ brahmādipati brahmaṇodhipatir\nbrahmā śivo me astu sa eva sadāśiva om",
+          "te": "ఈశాన సర్వవిద్యానామీశ్వరః సర్వభూతానాం బ్రహ్మాదిపతి బ్రహ్మణోఽధిపతిర్ |\nబ్రహ్మా శివో మే అస్తు స ఏవ సదాశివ ఓమ్ ||"
+        },
+        "meaning": {
+          "en": "Ishana, the lord of all knowledge, the lord of all beings, the ruler over Brahma and others; may Brahma and Shiva be with me, He alone is Sadashiva. Om.",
+          "hi": "ईशान, सभी ज्ञान के स्वामी, सभी प्राणियों के प्रभु, ब्रह्मा और अन्य देवों के अधिपति; ब्रह्मा और शिव मेरे साथ रहें, वही सदा शिव हैं। ॐ।",
+          "te": "ఈశానుడు సర్వ విజ్ఞానాల యజమాని, సర్వజీవుల యజమాని, బ్రహ్మా మరియు ఇతరుల అధిపతి; బ్రహ్మా మరియు శివుడు నాకు సహాయమవ్వగలరు, ఆయనే సదాశివుడు. ఓమ్."
+        },
+        "audioUrl": "/audio/ishana_stotra_1.mp3"
+      }
+
+    ]
   }
+
 ] 

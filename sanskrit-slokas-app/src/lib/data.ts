@@ -1,12 +1,13 @@
 import slokas from '@/../public/data/slokas.json';
 
+// Types for the new grouped structure
 export interface Sloka {
   id: number;
-  deity: string;
-  scripture: string;
-  title: string;
   originalText: string;
-  transliteration: string;
+  transliteration: {
+    en: string;
+    te: string;
+  };
   meaning: {
     en: string;
     hi: string;
@@ -15,20 +16,44 @@ export interface Sloka {
   audioUrl: string;
 }
 
-// Since the JSON is in the public folder, it's treated as a static asset
-// and we can't directly import it on the server-side in the same way.
-// A simple approach for this app structure is to just re-export the imported data.
-// For a larger app, we'd use an API route or server-side data fetching.
-const allSlokas: Sloka[] = slokas as Sloka[];
-
-export function getSlokasByDeity(deity: string): Sloka[] {
-  return allSlokas.filter(sloka => sloka.deity.toLowerCase() === deity.toLowerCase());
+export interface SlokaGroup {
+  deities: string[];
+  scripture: string;
+  title: string;
+  slokas: Sloka[];
 }
 
-export function getSlokaById(id: number): Sloka | undefined {
+// Flattened sloka for UI use
+export interface FlattenedSloka extends Sloka {
+  deities: string[];
+  scripture: string;
+  title: string;
+}
+
+// Flatten the grouped data for easier filtering/display
+const slokaGroups: SlokaGroup[] = slokas as SlokaGroup[];
+const allSlokas: FlattenedSloka[] = slokaGroups.flatMap(group =>
+  group.slokas.map(sloka => ({
+    ...sloka,
+    deities: group.deities,
+    scripture: group.scripture,
+    title: group.title,
+  }))
+);
+
+// Utility functions
+export function getSlokasByDeity(deity: string): FlattenedSloka[] {
+  return allSlokas.filter(sloka =>
+    sloka.deities.map(d => d.toLowerCase()).includes(deity.toLowerCase())
+  );
+}
+
+export function getSlokaById(id: number): FlattenedSloka | undefined {
   return allSlokas.find(sloka => sloka.id === id);
 }
 
-export function getSlokasByScripture(scripture: string): Sloka[] {
-  return allSlokas.filter(sloka => sloka.scripture.toLowerCase() === scripture.toLowerCase());
+export function getSlokasByScripture(scripture: string): FlattenedSloka[] {
+  return allSlokas.filter(sloka =>
+    sloka.scripture.toLowerCase() === scripture.toLowerCase()
+  );
 } 

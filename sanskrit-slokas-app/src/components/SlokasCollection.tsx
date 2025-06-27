@@ -19,7 +19,7 @@ const scriptures = [
 
 const DeityCard = ({ name }: { name: string }) => (
   <Link href={`/slokas/${name.toLowerCase()}`}>
-    <div className="bg-brand-surface p-4 rounded-lg shadow-sm flex items-center space-x-4 transition-transform transform hover:scale-105 hover:shadow-lg cursor-pointer border border-brand-border h-full">
+    <div className="bg-brand-surface p-4 rounded-lg shadow-sm flex items-center space-x-4 transition-transform transform hover:scale-105 hover:shadow-lg cursor-pointer border border-[#C0C0C0] h-full">
       <div className="w-16 h-16 rounded-full bg-brand-primary flex items-center justify-center flex-shrink-0">
         <span className="text-2xl font-bold text-white">{name.charAt(0)}</span>
       </div>
@@ -30,9 +30,9 @@ const DeityCard = ({ name }: { name: string }) => (
 
 const ScriptureCard = ({ name, description }: { name: string, description: string }) => (
   <Link href={`/slokas/scripture/${name.toLowerCase().replace(/\\s+/g, '-')}`}>
-    <div className="bg-brand-surface p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300 border border-brand-border cursor-pointer h-full">
+    <div className="bg-brand-surface p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300 border border-[#C0C0C0] cursor-pointer h-full">
       <h3 className="text-xl font-semibold text-brand-primary mb-2">{name}</h3>
-      <p className="text-brand-muted-text">{description}</p>
+      <p className="text-[#5A5A5A]">{description}</p>
     </div>
   </Link>
 );
@@ -44,7 +44,7 @@ const SlokasCollection = () => {
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="text-center">
         <h1 className="text-4xl font-bold text-brand-text">Slokas Collection</h1>
-        <p className="mt-2 text-brand-muted-text max-w-3xl mx-auto">
+        <p className="mt-2 text-[#5A5A5A] max-w-3xl mx-auto">
           Explore a vast collection of Sanskrit slokas, categorized by deity, scripture, or theme. Each sloka includes its meaning and audio for easy learning.
         </p>
       </div>
@@ -62,19 +62,19 @@ const SlokasCollection = () => {
           <nav className="-mb-px flex justify-center space-x-8" aria-label="Tabs">
             <button
               onClick={() => setActiveTab('Deities')}
-              className={`${activeTab === 'Deities' ? 'border-brand-primary text-brand-primary' : 'border-transparent text-brand-muted-text hover:text-brand-text hover:border-gray-300'} whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg transition-colors`}
+              className={`${activeTab === 'Deities' ? 'border-brand-primary text-brand-primary' : 'border-transparent text-[#5A5A5A] hover:text-brand-text hover:border-gray-300'} whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg transition-colors`}
             >
               Deities
             </button>
             <button
               onClick={() => setActiveTab('Scriptures')}
-              className={`${activeTab === 'Scriptures' ? 'border-brand-primary text-brand-primary' : 'border-transparent text-brand-muted-text hover:text-brand-text hover:border-gray-300'} whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg transition-colors`}
+              className={`${activeTab === 'Scriptures' ? 'border-brand-primary text-brand-primary' : 'border-transparent text-[#5A5A5A] hover:text-brand-text hover:border-gray-300'} whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg transition-colors`}
             >
               Scriptures
             </button>
             <button
               onClick={() => setActiveTab('Themes')}
-              className={`${activeTab === 'Themes' ? 'border-brand-primary text-brand-primary' : 'border-transparent text-brand-muted-text hover:text-brand-text hover:border-gray-300'} whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg transition-colors`}
+              className={`${activeTab === 'Themes' ? 'border-brand-primary text-brand-primary' : 'border-transparent text-[#5A5A5A] hover:text-brand-text hover:border-gray-300'} whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg transition-colors`}
             >
               Themes
             </button>
@@ -96,7 +96,7 @@ const SlokasCollection = () => {
               ))}
             </div>
           )}
-          {activeTab === 'Themes' && <div className="text-center py-10 text-brand-muted-text">Themes content coming soon.</div>}
+          {activeTab === 'Themes' && <div className="text-center py-10 text-[#5A5A5A]">Themes content coming soon.</div>}
         </div>
       </div>
     </div>

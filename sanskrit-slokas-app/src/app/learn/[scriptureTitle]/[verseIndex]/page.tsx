@@ -17,11 +17,12 @@ function getScriptureGroupBySlug(slug: string) {
   );
 }
 
-const SlokaLearnerPage = ({ params, searchParams }: { params: { scriptureTitle: string, verseIndex: string }, searchParams: { context?: string } }) => {
-  const { scriptureTitle, verseIndex } = params;
+const SlokaLearnerPage = async ({ params, searchParams }: { params: Promise<{ scriptureTitle: string, verseIndex: string }>, searchParams: Promise<{ context?: string }> }) => {
+  const { scriptureTitle, verseIndex } = await params;
+  const resolvedSearchParams = await searchParams;
   const group = getScriptureGroupBySlug(scriptureTitle);
   const index = parseInt(verseIndex, 10);
-  const context = searchParams.context ? JSON.parse(searchParams.context) : [];
+  const context = resolvedSearchParams.context ? JSON.parse(resolvedSearchParams.context) : [];
 
   if (!group || !group.slokas || !group.slokas[index]) {
     return <div className="text-center py-20">Sloka not found.</div>;

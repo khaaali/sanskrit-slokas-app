@@ -42,7 +42,7 @@ const ScriptureCard = ({ title, scripture, slokas }: { title: string; scripture:
           {firstSloka.originalText.split('\n')[0]}
         </div>
         <div className="flex items-center w-full mb-1">
-          <span className="text-xs sm:text-sm text-[#8A99A8] flex-1 mt-0.5">{title}</span>
+          <span className="text-xs sm:text-sm text-[#8A99A8] flex-1 mt-0.5 font-devanagari">{title}</span>
           <ScriptureTag scripture={scripture} />
         </div>
         <div className="flex items-center text-xs text-[#5A5A5A] mt-1">

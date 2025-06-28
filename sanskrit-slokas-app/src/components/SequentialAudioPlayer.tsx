@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState, useCallback } from 'react';
+import React, { useEffect, useRef, useCallback } from 'react';
 
 export interface SequentialAudioPlayerProps {
   verses: Array<{
@@ -6,25 +6,29 @@ export interface SequentialAudioPlayerProps {
     audioUrl: string;
     title: string;
   }>;
-  onVerseChange?: (verseIndex: number) => void;
+  currentVerseIndex: number;
+  isPlaying: boolean;
+  onVerseChange: (verseIndex: number) => void;
+  onPlayStateChange: (isPlaying: boolean) => void;
   autoPlay?: boolean;
 }
 
 const SequentialAudioPlayer: React.FC<SequentialAudioPlayerProps> = ({
   verses,
+  currentVerseIndex,
+  isPlaying,
   onVerseChange,
+  onPlayStateChange,
   autoPlay = false,
 }) => {
-  const [currentVerseIndex, setCurrentVerseIndex] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [loop, setLoop] = useState(false);
-  const [speed, setSpeed] = useState(1);
-  const [audioProgress, setAudioProgress] = useState(0);
-  const [audioDuration, setAudioDuration] = useState(0);
-  const [loading, setLoading] = useState(false);
-  const [audioError, setAudioError] = useState(false);
-  const [WaveSurfer, setWaveSurfer] = useState<any>(null);
-  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [loop, setLoop] = React.useState(false);
+  const [speed, setSpeed] = React.useState(1);
+  const [audioProgress, setAudioProgress] = React.useState(0);
+  const [audioDuration, setAudioDuration] = React.useState(0);
+  const [loading, setLoading] = React.useState(false);
+  const [audioError, setAudioError] = React.useState(false);
+  const [WaveSurfer, setWaveSurfer] = React.useState<any>(null);
+  const [isTransitioning, setIsTransitioning] = React.useState(false);
   
   const wavesurferRef = useRef<any>(null);
   const waveformRef = useRef<HTMLDivElement>(null);
@@ -43,29 +47,21 @@ const SequentialAudioPlayer: React.FC<SequentialAudioPlayerProps> = ({
     return 32;
   };
 
+  // Notify parent to advance verse
   const finishHandler = useCallback(() => {
-    if (isTransitioning) return; // Prevent multiple transitions
+    if (isTransitioning) return;
     setIsTransitioning(true);
-    setCurrentVerseIndex(prevIndex => {
-      const nextIndex = prevIndex + 1;
-      if (nextIndex < verses.length) {
-        setTimeout(() => {
-          setIsTransitioning(false);
-          setIsPlaying(true);
-        }, 200);
-        return nextIndex;
-      } else {
+    if (currentVerseIndex < verses.length - 1) {
+      setTimeout(() => {
         setIsTransitioning(false);
-        setIsPlaying(false);
-        return prevIndex;
-      }
-    });
-  }, [verses.length, isTransitioning]);
-
-  // Notify parent after currentVerseIndex changes
-  useEffect(() => {
-    if (onVerseChange) onVerseChange(currentVerseIndex);
-  }, [currentVerseIndex, onVerseChange]);
+        onVerseChange(currentVerseIndex + 1);
+        onPlayStateChange(true);
+      }, 200);
+    } else {
+      setIsTransitioning(false);
+      onPlayStateChange(false);
+    }
+  }, [isTransitioning, currentVerseIndex, verses.length, onVerseChange, onPlayStateChange]);
 
   const loopHandler = useCallback(() => {
     const ws = wavesurferRef.current;
@@ -75,9 +71,8 @@ const SequentialAudioPlayer: React.FC<SequentialAudioPlayerProps> = ({
     }
   }, [isTransitioning]);
 
-  // Reset state when verse changes
+  // Reset progress and error when verse changes
   useEffect(() => {
-    setIsPlaying(false);
     setAudioProgress(0);
     setAudioDuration(0);
     setLoading(false);
@@ -122,8 +117,8 @@ const SequentialAudioPlayer: React.FC<SequentialAudioPlayerProps> = ({
     ws.on('ready', () => {
       setLoading(false);
       setAudioDuration(ws.getDuration() || 0);
-      if (autoPlay && currentVerseIndex === 0 && !isTransitioning) {
-        setIsPlaying(true);
+      if ((autoPlay || isPlaying) && !isTransitioning) {
+        onPlayStateChange(true);
         ws.play();
       }
     });
@@ -140,7 +135,7 @@ const SequentialAudioPlayer: React.FC<SequentialAudioPlayerProps> = ({
         try { ws.destroy(); } catch (e) {}
       }
     };
-  }, [WaveSurfer, audioUrl, autoPlay, currentVerseIndex, finishHandler, loopHandler, isTransitioning]);
+  }, [WaveSurfer, audioUrl, autoPlay, currentVerseIndex, finishHandler, loopHandler, isTransitioning, isPlaying, onPlayStateChange]);
 
   // Update finish event handler when loop changes, without reloading audio
   useEffect(() => {
@@ -161,7 +156,7 @@ const SequentialAudioPlayer: React.FC<SequentialAudioPlayerProps> = ({
     };
   }, [loop, finishHandler, loopHandler]);
 
-  // Sync play/pause from UI
+  // Sync play/pause from parent
   useEffect(() => {
     const ws = wavesurferRef.current;
     if (!ws || isTransitioning) return;
@@ -207,14 +202,16 @@ const SequentialAudioPlayer: React.FC<SequentialAudioPlayerProps> = ({
             type="button"
             aria-label={isPlaying ? 'Pause audio' : 'Play audio'}
             aria-pressed={isPlaying}
-            onClick={() => setIsPlaying((p) => !p)}
+            onClick={() => onPlayStateChange(!isPlaying)}
             className="p-2 rounded"
             disabled={loading}
           >
             {isPlaying ? (
               <svg width="24" height="24" fill="none" viewBox="0 0 24 24" aria-label="Pause icon" role="img" className="text-[#4A90E2]"><rect x="6" y="5" width="4" height="14" rx="2" fill="currentColor"/><rect x="14" y="5" width="4" height="14" rx="2" fill="currentColor"/></svg>
             ) : (
-              <svg width="24" height="24" fill="none" viewBox="0 0 24 24" aria-label="Play icon" role="img" className="text-[#2C3E50]"><path d="M7 6v12l10-6-10-6z" fill="currentColor"/></svg>
+              <svg width="24" height="24" fill="none" viewBox="0 0 24 24" aria-label="Play icon" role="img" className="text-[#2C3E50]">
+                <path d="M7 6v12l10-6-10-6z" fill="currentColor"/>
+              </svg>
             )}
           </button>
           <button

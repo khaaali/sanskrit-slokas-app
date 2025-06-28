@@ -17,3 +17,7 @@ body {
   color: var(--color-brand-text);
   font-family: sans-serif;
 }
+
+.font-devanagari {
+  font-family: var(--font-tiro-devanagari), 'Noto Sans Devanagari', serif;
+}

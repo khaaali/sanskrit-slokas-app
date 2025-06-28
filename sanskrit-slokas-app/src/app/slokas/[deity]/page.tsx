@@ -3,8 +3,9 @@ import Link from 'next/link';
 import SlokaList from '@/components/SlokaList';
 
 // This will be replaced with a proper component
-const SlokaListPage = ({ params }: { params: { deity: string } }) => {
-  const deityName = params.deity.charAt(0).toUpperCase() + params.deity.slice(1);
+const SlokaListPage = async ({ params }: { params: Promise<{ deity: string }> }) => {
+  const { deity } = await params;
+  const deityName = deity.charAt(0).toUpperCase() + deity.slice(1);
 
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -17,7 +18,7 @@ const SlokaListPage = ({ params }: { params: { deity: string } }) => {
       <div className="text-center mb-10">
         <h1 className="text-4xl font-bold text-brand-text">Slokas for {deityName}</h1>
       </div>
-      <SlokaList deity={params.deity} />
+      <SlokaList deity={deity} />
     </div>
   );
 };

@@ -22,9 +22,10 @@ const SlokaLearner = ({ sloka, slokaIndex, slokaIndices, group }: SlokaLearnerPr
   const [language, setLanguage] = useState<Language>('en');
   const [expandedIndex, setExpandedIndex] = useState<number>(slokaIndex);
   const [showAllVerses, setShowAllVerses] = useState(false);
-  const [allPlayIndex, setAllPlayIndex] = useState<number | null>(null);
-  const [allIsLooping, setAllIsLooping] = useState(false);
-  const [allPlaybackSpeed, setAllPlaybackSpeed] = useState(1);
+  
+  // Controlled state for SequentialAudioPlayer
+  const [currentVerseIndex, setCurrentVerseIndex] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   const currentIndex = slokaIndex;
   const prevSlokaIndex = currentIndex > 0 ? slokaIndices[currentIndex - 1] : null;
@@ -59,21 +60,39 @@ const SlokaLearner = ({ sloka, slokaIndex, slokaIndices, group }: SlokaLearnerPr
   // If group has multiple slokas, show accordion
   const isMultiVerse = group && group.slokas && group.slokas.length > 1;
 
-  // Initialize allPlayIndex when switching to book view
+  // Initialize currentVerseIndex when switching to book view
   useEffect(() => {
-    if (showAllVerses && allPlayIndex === null) {
-      setAllPlayIndex(0);
+    if (showAllVerses) {
+      setCurrentVerseIndex(0);
+      setIsPlaying(false);
     }
-  }, [showAllVerses, allPlayIndex]);
+  }, [showAllVerses]);
+
+  // Handle verse change from SequentialAudioPlayer
+  const handleVerseChange = (verseIndex: number) => {
+    setCurrentVerseIndex(verseIndex);
+  };
+
+  // Handle play state change from SequentialAudioPlayer
+  const handlePlayStateChange = (playing: boolean) => {
+    setIsPlaying(playing);
+  };
+
+  // Handle clicking on a verse to start playback from that verse
+  const handleVerseClick = (verseIndex: number) => {
+    setCurrentVerseIndex(verseIndex);
+    setIsPlaying(true);
+  };
 
   // Debug logging for state changes
   useEffect(() => {
     console.log('Book view state:', {
       showAllVerses,
-      allPlayIndex,
+      currentVerseIndex,
+      isPlaying,
       totalVerses: group?.slokas?.length
     });
-  }, [showAllVerses, allPlayIndex, group?.slokas?.length]);
+  }, [showAllVerses, currentVerseIndex, isPlaying, group?.slokas?.length]);
 
   return (
     <div className="container mx-auto px-2 sm:px-4 lg:px-8 py-6 md:py-12">
@@ -125,27 +144,26 @@ const SlokaLearner = ({ sloka, slokaIndex, slokaIndices, group }: SlokaLearnerPr
           {isMultiVerse && showAllVerses ? (
             <div className="bg-white rounded-lg shadow p-6 mb-4">
               <h3 className="font-extrabold text-xl mb-4 border-b border-gray-100 pb-1 text-center text-[#22304A]">मूलपाठ: <span className="text-sm text-gray-500 font-normal">(All Verses)</span></h3>
-              <div className="mb-6 max-w-xl mx-auto">
+              <div className="mb-6 max-w-5xl mx-auto">
                 <SequentialAudioPlayer
                   verses={group.slokas}
-                  isLooping={allIsLooping}
-                  playbackSpeed={allPlaybackSpeed}
-                  onVerseChange={(index: number) => setAllPlayIndex(index)}
+                  currentVerseIndex={currentVerseIndex}
+                  isPlaying={isPlaying}
+                  onVerseChange={handleVerseChange}
+                  onPlayStateChange={handlePlayStateChange}
+                  autoPlay={false}
                 />
-                <div className="text-center text-xs text-gray-500 mt-1">
-                  {allPlayIndex !== null ? `Playing verse ${allPlayIndex + 1} of ${group.slokas.length}` : ''}
+                <div className="text-center text-xs text-gray-600 mt-2">
+                  {isPlaying ? `Playing Verse ${currentVerseIndex + 1} of ${group.slokas.length}` : `Paused at Verse ${currentVerseIndex + 1} of ${group.slokas.length}`}
                 </div>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {group.slokas.map((verse: any, idx: number) => (
-                  <div key={verse.id} className={`mb-6 transition-all duration-300 p-4 rounded-lg ${allPlayIndex === idx ? 'bg-blue-50 border-2 border-blue-200 shadow-md' : 'bg-gray-50 border border-gray-200'}`}>
-                    <div className="font-devanagari text-lg font-bold whitespace-pre-line text-center mb-2">{verse.originalText}</div>
-                    <div className={`text-xs text-center font-medium ${allPlayIndex === idx ? 'text-blue-700' : 'text-gray-500'}`}>
-                      {allPlayIndex === idx ? '▶ Playing' : ''} Verse {idx + 1}
-                    </div>
-                  </div>
-                ))}
-              </div>
+              {/* Column-major grid for verses */}
+              <ColumnMajorSlokaGrid
+                slokas={group.slokas}
+                currentVerseIndex={currentVerseIndex}
+                isPlaying={isPlaying}
+                onVerseClick={handleVerseClick}
+              />
             </div>
           ) : isMultiVerse ? (
             <div className="mt-6 divide-y divide-gray-200 rounded-lg border border-gray-200 bg-white">
@@ -225,5 +243,46 @@ const SlokaLearner = ({ sloka, slokaIndex, slokaIndices, group }: SlokaLearnerPr
     </div>
   );
 };
+
+function ColumnMajorSlokaGrid({ slokas, currentVerseIndex, isPlaying, onVerseClick }: {
+  slokas: any[];
+  currentVerseIndex: number;
+  isPlaying: boolean;
+  onVerseClick: (idx: number) => void;
+}) {
+  // Responsive columns: 1 (mobile), 2 (sm), 3 (lg)
+  // We'll render 3 columns for desktop, 2 for tablet, 1 for mobile, but let CSS handle the wrapping.
+  // For column-major, we need to split slokas into columns.
+  // We'll use 3 columns for simplicity (can be improved with a hook for true responsiveness)
+  const numCols = 3;
+  const numRows = Math.ceil(slokas.length / numCols);
+  // Build columns: each column is an array of sloka indices
+  const columns = Array.from({ length: numCols }, (_, colIdx) =>
+    Array.from({ length: numRows }, (_, rowIdx) => {
+      const idx = rowIdx + colIdx * numRows;
+      return idx < slokas.length ? idx : null;
+    }).filter(idx => idx !== null)
+  );
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {columns.map((col, colIdx) => (
+        <div key={colIdx} className="flex flex-col gap-4">
+          {col.map(idx => (
+            <div
+              key={slokas[idx].id}
+              className={`bg-white border rounded-lg p-4 text-center font-devanagari leading-relaxed shadow-sm transition cursor-pointer whitespace-pre-line
+                ${currentVerseIndex === idx ? 'border-blue-400 bg-blue-50' : 'hover:bg-gray-50'}`}
+              onClick={() => onVerseClick(idx)}
+              style={{ minHeight: 120 }}
+            >
+              <div className="text-lg">{slokas[idx].originalText}</div>
+              <div className="text-xs text-gray-500 mt-2">॥ {idx + 1} ॥</div>
+            </div>
+          ))}
+        </div>
+      ))}
+    </div>
+  );
+}
 
 export default SlokaLearner; 

@@ -42,7 +42,7 @@ const ScriptureTypePage = ({ params }: { params: { scripture: string } }) => {
         </Link>
       </div>
       <div className="text-center mb-10">
-        <h1 className="text-4xl font-bold text-brand-text">{scriptureType.charAt(0).toUpperCase() + scriptureType.slice(1)}s</h1>
+        <h1 className="text-4xl font-bold text-brand-text font-devanagari">{scriptureType.charAt(0).toUpperCase() + scriptureType.slice(1)}s</h1>
       </div>
       {Object.keys(grouped).length === 0 ? (
         <div className="text-center py-10 text-brand-muted-text">
@@ -62,7 +62,7 @@ const ScriptureTypePage = ({ params }: { params: { scripture: string } }) => {
                     {firstSloka.originalText.split('\n')[0]}
                   </div>
                   <div className="flex items-center w-full mb-1">
-                    <span className="text-xs sm:text-sm text-[#8A99A8] flex-1 mt-0.5">{title}</span>
+                    <span className="text-xs sm:text-sm text-[#8A99A8] flex-1 mt-0.5 font-devanagari">{title}</span>
                     {deities && deities.length > 0 && (
                       <span className="flex items-center ml-2">
                         {deities.map(d => (

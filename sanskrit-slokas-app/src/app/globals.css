@@ -15,7 +15,7 @@
 body {
   background-color: var(--color-brand-background);
   color: var(--color-brand-text);
-  font-family: sans-serif;
+  font-family: 'Inter', 'Noto Sans', Arial, sans-serif;
 }
 
 .font-devanagari {

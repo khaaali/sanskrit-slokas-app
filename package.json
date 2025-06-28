@@ -1,0 +1,11 @@
+{
+  "name": "audio-book-monorepo",
+  "private": true,
+  "workspaces": [
+    "sanskrit-slokas-app"
+  ],
+  "dependencies": {
+    "@fontsource/inter": "^5.2.6",
+    "@next/font": "^14.2.15"
+  }
+}

@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useCallback } from 'react';
+import type WaveSurfer from 'wavesurfer.js';
 
 export interface SequentialAudioPlayerProps {
   verses: Array<{
@@ -27,10 +28,10 @@ const SequentialAudioPlayer: React.FC<SequentialAudioPlayerProps> = ({
   const [audioDuration, setAudioDuration] = React.useState(0);
   const [loading, setLoading] = React.useState(false);
   const [audioError, setAudioError] = React.useState(false);
-  const [WaveSurfer, setWaveSurfer] = React.useState<any>(null);
+  const [WaveSurferClass, setWaveSurferClass] = React.useState<typeof WaveSurfer | null>(null);
   const [isTransitioning, setIsTransitioning] = React.useState(false);
   
-  const wavesurferRef = useRef<any>(null);
+  const wavesurferRef = useRef<WaveSurfer | null>(null);
   const waveformRef = useRef<HTMLDivElement>(null);
 
   const currentVerse = verses[currentVerseIndex];
@@ -38,10 +39,10 @@ const SequentialAudioPlayer: React.FC<SequentialAudioPlayerProps> = ({
 
   // Dynamically import wavesurfer.js on client
   useEffect(() => {
-    if (!WaveSurfer) {
-      import('wavesurfer.js').then((mod) => setWaveSurfer(() => mod.default));
+    if (!WaveSurferClass) {
+      import('wavesurfer.js').then((mod) => setWaveSurferClass(() => mod.default));
     }
-  }, [WaveSurfer]);
+  }, [WaveSurferClass]);
 
   const getWaveformHeight = () => {
     return 32;
@@ -81,7 +82,7 @@ const SequentialAudioPlayer: React.FC<SequentialAudioPlayerProps> = ({
 
   // Initialize and sync WaveSurfer
   useEffect(() => {
-    if (!WaveSurfer || !waveformRef.current || !audioUrl) return;
+    if (!WaveSurferClass || !waveformRef.current || !audioUrl) return;
     if (wavesurferRef.current) {
       const oldWs = wavesurferRef.current;
       oldWs.pause();
@@ -94,7 +95,7 @@ const SequentialAudioPlayer: React.FC<SequentialAudioPlayerProps> = ({
     setAudioDuration(0);
     setLoading(true);
     setAudioError(false);
-    const ws = WaveSurfer.create({
+    const ws = WaveSurferClass.create({
       container: waveformRef.current,
       waveColor: '#d1e6fa',
       progressColor: '#3b82f6',
@@ -103,7 +104,6 @@ const SequentialAudioPlayer: React.FC<SequentialAudioPlayerProps> = ({
       cursorColor: 'transparent',
       backend: 'MediaElement',
       mediaControls: false,
-      responsive: true,
     });
     ws.load(audioUrl);
     wavesurferRef.current = ws;
@@ -135,7 +135,7 @@ const SequentialAudioPlayer: React.FC<SequentialAudioPlayerProps> = ({
         try { ws.destroy(); } catch (e) {}
       }
     };
-  }, [WaveSurfer, audioUrl, autoPlay, currentVerseIndex, finishHandler, loopHandler, isTransitioning, isPlaying, onPlayStateChange]);
+  }, [WaveSurferClass, audioUrl, autoPlay, currentVerseIndex, finishHandler, loopHandler, isTransitioning, isPlaying, onPlayStateChange]);
 
   // Update finish event handler when loop changes, without reloading audio
   useEffect(() => {

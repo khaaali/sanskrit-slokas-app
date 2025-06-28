@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
+import type WaveSurfer from 'wavesurfer.js';
 
 export interface AudioPlayerProps {
   audioUrl: string;
@@ -27,8 +28,8 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({
   const [loading, setLoading] = useState(true);
   const [audioError, setAudioError] = useState(false);
   const waveformRef = useRef<HTMLDivElement | null>(null);
-  const wavesurferRef = useRef<any>(null);
-  const [WaveSurfer, setWaveSurfer] = useState<any>(null);
+  const wavesurferRef = useRef<WaveSurfer | null>(null);
+  const [WaveSurferClass, setWaveSurferClass] = useState<typeof WaveSurfer | null>(null);
   const [loop, setLoop] = useState(isLooping);
   const [speed, setSpeed] = useState(playbackSpeed);
 
@@ -49,10 +50,10 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({
 
   // Dynamically import wavesurfer.js on client
   useEffect(() => {
-    if (!WaveSurfer) {
-      import('wavesurfer.js').then((mod) => setWaveSurfer(() => mod.default));
+    if (!WaveSurferClass) {
+      import('wavesurfer.js').then((mod) => setWaveSurferClass(() => mod.default));
     }
-  }, [WaveSurfer]);
+  }, [WaveSurferClass]);
 
   // Responsive: determine waveform height based on screen size
   const getWaveformHeight = () => {
@@ -86,7 +87,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({
 
   // Initialize and sync WaveSurfer
   useEffect(() => {
-    if (!WaveSurfer || !waveformRef.current || !audioUrl) return;
+    if (!WaveSurferClass || !waveformRef.current || !audioUrl) return;
     if (wavesurferRef.current) {
       wavesurferRef.current.destroy();
     }
@@ -95,7 +96,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({
     setAudioDuration(0);
     setLoading(true);
     setAudioError(false);
-    const ws = WaveSurfer.create({
+    const ws = WaveSurferClass.create({
       container: waveformRef.current,
       waveColor: '#d1e6fa',
       progressColor: '#3b82f6',
@@ -104,7 +105,6 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({
       cursorColor: 'transparent',
       backend: 'MediaElement',
       mediaControls: false,
-      responsive: true,
     });
     ws.load(audioUrl);
     wavesurferRef.current = ws;
@@ -140,7 +140,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({
     return () => {
       ws.destroy();
     };
-  }, [WaveSurfer, audioUrl, autoPlay, onAutoPlayConsumed]);
+  }, [WaveSurferClass, audioUrl, autoPlay, onAutoPlayConsumed]);
 
   // Sync play/pause from UI
   useEffect(() => {

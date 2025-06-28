@@ -1,6 +1,7 @@
 import React, { Suspense } from 'react';
 import SlokaLearner from '@/components/SlokaLearner';
 import slokasData from '@/../public/data/slokas.json';
+import type { SlokaGroup, FlattenedSloka } from '@/lib/data';
 
 // Simple slugify function (must match the one in scripture type page)
 function slugify(str: string) {
@@ -11,16 +12,25 @@ function slugify(str: string) {
 }
 
 // Find scripture group by slug
-function getScriptureGroupBySlug(slug: string) {
-  return slokasData.find(
-    (group: any) => slugify(group.title) === slug
+type SlokasDataType = SlokaGroup[];
+function getScriptureGroupBySlug(slug: string, data: SlokasDataType): SlokaGroup | undefined {
+  return data.find(
+    (group) => slugify(group.title) === slug
   );
 }
 
-const SlokaLearnerPage = async ({ params, searchParams }: { params: Promise<{ scriptureTitle: string, verseIndex: string }>, searchParams: Promise<{ context?: string }> }) => {
+interface PageParams {
+  scriptureTitle: string;
+  verseIndex: string;
+}
+interface PageSearchParams {
+  context?: string;
+}
+
+const SlokaLearnerPage = async ({ params, searchParams }: { params: Promise<PageParams>, searchParams: Promise<PageSearchParams> }) => {
   const { scriptureTitle, verseIndex } = await params;
   const resolvedSearchParams = await searchParams;
-  const group = getScriptureGroupBySlug(scriptureTitle);
+  const group = getScriptureGroupBySlug(scriptureTitle, slokasData as SlokasDataType);
   const index = parseInt(verseIndex, 10);
   const context = resolvedSearchParams.context ? JSON.parse(resolvedSearchParams.context) : [];
 
@@ -29,7 +39,7 @@ const SlokaLearnerPage = async ({ params, searchParams }: { params: Promise<{ sc
   }
 
   // Compose a "flattened" sloka object for compatibility with SlokaLearner
-  const sloka = {
+  const sloka: FlattenedSloka = {
     ...group.slokas[index],
     deities: group.deities,
     scripture: group.scripture,
@@ -37,7 +47,7 @@ const SlokaLearnerPage = async ({ params, searchParams }: { params: Promise<{ sc
   };
 
   // Compose context as indices for navigation
-  const slokaIds = Array.isArray(context) && context.length > 0 ? context : group.slokas.map((_: any, idx: number) => idx);
+  const slokaIds: number[] = Array.isArray(context) && context.length > 0 ? context : group.slokas.map((_, idx) => idx);
 
   return (
     <div>

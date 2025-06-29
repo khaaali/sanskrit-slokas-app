@@ -129,10 +129,10 @@ const SequentialAudioPlayer: React.FC<SequentialAudioPlayerProps> = ({
     ws.on('finish', finishHandler);
     return () => {
       if (ws) {
-        try { ws.pause(); } catch (e) {}
-        try { ws.un('finish', loopHandler); } catch (e) {}
-        try { ws.un('finish', finishHandler); } catch (e) {}
-        try { ws.destroy(); } catch (e) {}
+        try { ws.pause(); } catch { }
+        try { ws.un('finish', loopHandler); } catch { }
+        try { ws.un('finish', finishHandler); } catch { }
+        try { ws.destroy(); } catch { }
       }
     };
   }, [WaveSurferClass, audioUrl, autoPlay, currentVerseIndex, finishHandler, loopHandler, isTransitioning, isPlaying, onPlayStateChange]);

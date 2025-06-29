@@ -23,16 +23,11 @@ interface PageParams {
   scriptureTitle: string;
   verseIndex: string;
 }
-interface PageSearchParams {
-  context?: string;
-}
 
-const SlokaLearnerPage = async ({ params, searchParams }: { params: Promise<PageParams>, searchParams: Promise<PageSearchParams> }) => {
+const SlokaLearnerPage = async ({ params }: { params: Promise<PageParams> }) => {
   const { scriptureTitle, verseIndex } = await params;
-  const resolvedSearchParams = await searchParams;
   const group = getScriptureGroupBySlug(scriptureTitle, slokasData as SlokasDataType);
   const index = parseInt(verseIndex, 10);
-  const context = resolvedSearchParams.context ? JSON.parse(resolvedSearchParams.context) : [];
 
   if (!group || !group.slokas || !group.slokas[index]) {
     return <div className="text-center py-20">Sloka not found.</div>;
@@ -46,13 +41,10 @@ const SlokaLearnerPage = async ({ params, searchParams }: { params: Promise<Page
     title: group.title,
   };
 
-  // Compose context as indices for navigation
-  const slokaIds: number[] = Array.isArray(context) && context.length > 0 ? context : group.slokas.map((_, idx) => idx);
-
   return (
     <div>
       <Suspense fallback={<div className="text-center py-20">Loading...</div>}>
-        <SlokaLearner sloka={sloka} slokaIndex={index} slokaIndices={slokaIds} group={group} />
+        <SlokaLearner sloka={sloka} slokaIndex={index} group={group} />
       </Suspense>
     </div>
   );

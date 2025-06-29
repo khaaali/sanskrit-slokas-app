@@ -1,7 +1,6 @@
 import React from 'react';
 
 interface SlokaCardProps {
-  title: string;
   text: string;
   transliteration: { en: string; te: string };
   transliterationLanguage: 'en' | 'te';
@@ -10,7 +9,7 @@ interface SlokaCardProps {
   children?: React.ReactNode;
 }
 
-const SlokaCard: React.FC<SlokaCardProps> = ({ title, text, transliteration, transliterationLanguage, meaning, languageSelector, children }) => (
+const SlokaCard: React.FC<SlokaCardProps> = ({ text, transliteration, transliterationLanguage, meaning, languageSelector, children }) => (
   <section className="bg-white rounded-lg shadow p-4 mb-4">
     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-0">
       {/* Original Text */}

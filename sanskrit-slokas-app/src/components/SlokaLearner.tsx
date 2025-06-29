@@ -177,7 +177,6 @@ const SlokaLearner = ({ sloka, slokaIndex, group }: SlokaLearnerProps) => {
                     {expandedIndex === idx && (
                       <div className="px-4 pb-6">
                         <SlokaCard
-                          title={sloka.title}
                           text={verse.originalText}
                           transliteration={verse.transliteration}
                           transliterationLanguage={language === 'hi' ? 'en' : language}
@@ -209,7 +208,6 @@ const SlokaLearner = ({ sloka, slokaIndex, group }: SlokaLearnerProps) => {
               </div>
             ) : (
               <SlokaCard
-                title={sloka.title}
                 text={sloka.originalText}
                 transliteration={sloka.transliteration}
                 transliterationLanguage={language === 'hi' ? 'en' : language}

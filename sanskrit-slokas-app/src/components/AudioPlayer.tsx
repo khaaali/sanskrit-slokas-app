@@ -34,18 +34,14 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({
   const [speed, setSpeed] = useState(playbackSpeed);
 
   useEffect(() => {
-    console.log('[AudioPlayer] MOUNTED', { audioUrl, autoPlay });
     return () => {
-      console.log('[AudioPlayer] UNMOUNTED', { audioUrl });
     };
-  }, []);
-
-  useEffect(() => {
-    console.log('[AudioPlayer] audioUrl or autoPlay changed', { audioUrl, autoPlay });
   }, [audioUrl, autoPlay]);
 
   useEffect(() => {
-    console.log('[AudioPlayer] isPlaying changed', { isPlaying });
+  }, [audioUrl, autoPlay]);
+
+  useEffect(() => {
   }, [isPlaying]);
 
   // Dynamically import wavesurfer.js on client
@@ -118,24 +114,19 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({
     ws.on('ready', () => {
       setLoading(false);
       setAudioDuration(ws.getDuration() || 0);
-      console.log('[AudioPlayer] ready', { autoPlay, isPlaying: isPlaying });
       if (autoPlay) {
-        console.log('[AudioPlayer] Auto-play triggered, starting playback');
         setIsPlaying(true);
         ws.play();
       }
     });
     ws.on('play', () => {
-      console.log('[AudioPlayer] play event fired');
       if (autoPlay && onAutoPlayConsumed) {
-        console.log('[AudioPlayer] onAutoPlayConsumed called after play event');
         onAutoPlayConsumed();
       }
     });
     ws.on('error', () => {
       setAudioError(true);
       setLoading(false);
-      console.log('[AudioPlayer] error loading audio', { audioUrl });
     });
     return () => {
       ws.destroy();
@@ -149,11 +140,9 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({
     if (isPlaying) {
       ws.play();
       if (onPlay) onPlay();
-      console.log('[AudioPlayer] PLAY', { audioUrl });
     } else {
       ws.pause();
       if (onPause) onPause();
-      console.log('[AudioPlayer] PAUSE', { audioUrl });
     }
   }, [isPlaying, onPlay, onPause, audioUrl]);
 

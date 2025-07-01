@@ -6,6 +6,8 @@
   ],
   "dependencies": {
     "@fontsource/inter": "^5.2.6",
-    "@next/font": "^14.2.15"
+    "@next/font": "^14.2.15",
+    "@vercel/blob": "^1.1.1",
+    "dotenv": "^17.0.1"
   }
 }

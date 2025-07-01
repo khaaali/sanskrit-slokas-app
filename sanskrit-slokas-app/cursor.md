@@ -694,4 +694,41 @@ jobs:
   - Reference related issues in the PR description (e.g., `Fixes #123`).
   - Address reviewer feedback promptly and update the PR as needed.
 
---- 
+---
+
+# Development Session Summary
+
+**Date:** 2024-06-09
+
+## 1. Database-Driven Slokas App
+- Migrated the Sanskrit Slokas learning app to use a Postgres database (Neon) for storing sloka collections and verses, replacing the static JSON file.
+- Created and refined utility functions to fetch collections and slokas from the database.
+
+## 2. Audio Upload with Vercel Blob
+- Implemented an audio upload flow using Vercel Blob for storing sloka audio files.
+- Fixed the API route to handle uploads and return proper responses.
+
+## 3. Upload Page
+- Built a feature-rich upload page:
+  - Dynamic fields for slokas, transliteration, meaning, and audio.
+  - Dropdowns for deities and scriptures, with custom entry support.
+  - Audio preview and validation.
+  - Form submission uploads audio and sloka data to the database.
+
+## 4. Dynamic Sloka Listing and Learning
+- Refactored `/slokas/[deity]` and `/learn/[scriptureTitle]/[verseIndex]` pages to fetch and display slokas from the database.
+- Ensured new uploads appear immediately in the UI and are accessible for learning.
+
+## 5. Code Quality and Linting
+- Removed all usages of `any` and replaced them with explicit types (`SlokaGroup`, `FlattenedSloka`, etc.).
+- Fixed all TypeScript and ESLint errors, including error handling and unused variables.
+- Cleaned up the project structure by removing a duplicate root-level `src` folder.
+
+## 6. Git Workflow
+- Committed and pushed all changes to the `updating-vishnu` branch.
+- Provided a link to create a pull request for code review and merging.
+
+---
+
+**Result:**
+The app is now fully database-driven, type-safe, and production-ready, with a clean codebase and modern upload/management features for Sanskrit slokas and audio. 

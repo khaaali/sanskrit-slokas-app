@@ -1,22 +1,14 @@
 import React, { Suspense } from 'react';
 import SlokaLearner from '@/components/SlokaLearner';
-import slokasData from '@/../public/data/slokas.json';
+import { getCollectionsWithSlokas } from '@/lib/db';
 import type { SlokaGroup, FlattenedSloka } from '@/lib/data';
 
-// Simple slugify function (must match the one in scripture type page)
+// Simple slugify function (must match the one in list page)
 function slugify(str: string) {
   return str
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '');
-}
-
-// Find scripture group by slug
-type SlokasDataType = SlokaGroup[];
-function getScriptureGroupBySlug(slug: string, data: SlokasDataType): SlokaGroup | undefined {
-  return data.find(
-    (group) => slugify(group.title) === slug
-  );
 }
 
 interface PageParams {
@@ -26,7 +18,9 @@ interface PageParams {
 
 const SlokaLearnerPage = async ({ params }: { params: Promise<PageParams> }) => {
   const { scriptureTitle, verseIndex } = await params;
-  const group = getScriptureGroupBySlug(scriptureTitle, slokasData as SlokasDataType);
+  const collections = await getCollectionsWithSlokas() as SlokaGroup[];
+  // Find the group by slugified title
+  const group = collections.find((col) => slugify(col.title) === scriptureTitle);
   const index = parseInt(verseIndex, 10);
 
   if (!group || !group.slokas || !group.slokas[index]) {
@@ -44,7 +38,7 @@ const SlokaLearnerPage = async ({ params }: { params: Promise<PageParams> }) => 
   return (
     <div>
       <Suspense fallback={<div className="text-center py-20">Loading...</div>}>
-        <SlokaLearner sloka={sloka} slokaIndex={index} group={group} />
+        <SlokaLearner sloka={sloka} slokaIndex={index} group={group as SlokaGroup} />
       </Suspense>
     </div>
   );

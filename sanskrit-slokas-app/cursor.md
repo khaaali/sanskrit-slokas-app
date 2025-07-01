@@ -672,4 +672,26 @@ jobs:
   - Test plugins locally and in preview deployments before merging to main.
   - Check plugin compatibility with each Next.js upgrade and review plugin changelogs.
 
+---
+
+## 2q. Pull Request (PR) Workflow & Template
+
+- **PR Template:**
+  - The repository includes a standardized Pull Request template at `.github/pull_request_template.md`.
+  - This template ensures all PRs include:
+    - A clear description and motivation for the change
+    - The type of change (bug fix, feature, docs, etc.)
+    - A checklist for build, tests, documentation, linting, accessibility, security, and merge review
+    - Sections for screenshots and additional reviewer notes
+- **PR Process:**
+  - Create a new branch from `develop` (or `main` for hotfixes).
+  - Open a PR to merge your branch into `develop` (or `main` for releases/hotfixes).
+  - Fill out the PR template, complete the checklist, and request review.
+  - Ensure all CI checks pass before merging.
+  - Use clear, descriptive commit messages and PR titles.
+- **Best Practices:**
+  - Keep PRs focused and small when possible.
+  - Reference related issues in the PR description (e.g., `Fixes #123`).
+  - Address reviewer feedback promptly and update the PR as needed.
+
 --- 

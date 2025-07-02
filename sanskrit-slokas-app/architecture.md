@@ -46,4 +46,16 @@ This app is a modern, full-stack Sanskrit Slokas learning platform built with Ne
 
 ## Result
 - The app is scalable, type-safe, and cloud-native, with clear separation of concerns between frontend, API, storage, and database.
-- New slokas and audio can be added and accessed instantly, supporting a modern learning experience. 
+- New slokas and audio can be added and accessed instantly, supporting a modern learning experience.
+
+## AI Integration for Sloka Generation (2024-06-29)
+
+The app integrates Google Gemini (via Google AI Studio) to automatically generate transliterations and meanings for Sanskrit slokas. This is achieved through a dedicated Next.js API route (`/api/generate-sloka`), which:
+
+- Accepts Sanskrit text from the frontend upload page.
+- Constructs a prompt with clear instructions, output format, and in-context examples, simulating a conversation (user: instructions/example input, model: example output, user: actual input) to maximize the likelihood of receiving a clean JSON response.
+- Sends the prompt to the Gemini API using the latest supported model and endpoint.
+- Post-processes the AI response to strip any markdown code fences before parsing the JSON, ensuring robust handling regardless of model quirks.
+- Returns the parsed transliteration and meaning to the frontend, where it is displayed for user review and editing.
+
+Error handling is implemented both server-side (logging and returning clear error messages) and client-side (displaying errors and allowing retry/edit). This AI integration is a core part of the sloka upload flow, streamlining content creation and enhancing user experience while maintaining reliability and transparency in the app's architecture. 

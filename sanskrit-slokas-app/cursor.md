@@ -732,3 +732,13 @@ jobs:
 
 **Result:**
 The app is now fully database-driven, type-safe, and production-ready, with a clean codebase and modern upload/management features for Sanskrit slokas and audio. 
+
+## Update Log
+
+### 2024-06-29
+- Integrated Google Gemini API (via Google AI Studio) for generating transliterations and meanings for Sanskrit slokas.
+- Implemented robust prompt engineering with in-context examples and simulated conversation structure to improve JSON output reliability.
+- Added post-processing logic to strip markdown code fences from AI responses before parsing JSON, ensuring resilience to LLM quirks.
+- Fixed error boundaries and hydration issues in Next.js by removing <html> and <body> tags from the custom error component.
+- Debugged and resolved Gemini API model/version errors and role usage (user/model) in the API request.
+- Ensured the upload page flow is robust, with clear error handling and user feedback for both AI and upload errors. 

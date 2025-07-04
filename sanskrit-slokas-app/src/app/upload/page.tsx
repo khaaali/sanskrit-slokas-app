@@ -153,7 +153,14 @@ function UploadPage() {
     });
   };
 
-  const addSloka = () => setSlokas((prev) => [...prev, { ...emptySloka }]);
+  const addSloka = () => {
+    setSlokas((prev) => [
+      ...prev,
+      { ...emptySloka } // Always add a fresh, empty sloka
+    ]);
+    setSlokaLoading((prev) => [...prev, false]);
+    setSlokaError((prev) => [...prev, ""]);
+  };
   const removeSloka = (idx: number) => setSlokas((prev) => prev.length === 1 ? prev : prev.filter((_, i) => i !== idx));
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -197,6 +204,8 @@ function UploadPage() {
         setCustomScripture("");
         setTitle("");
         setSlokas([{ ...emptySloka }]);
+        setSlokaError([""]);
+        setSlokaLoading([false]);
       } else {
         const err = await res.json();
         setMessage("Error: " + (err.error || "Unknown error"));
@@ -229,131 +238,180 @@ function UploadPage() {
   }, [slokas.length]);
 
   return (
-    <div className="max-w-3xl mx-auto p-6">
-      <h1 className="text-3xl font-bold mb-6">Upload New Sloka Collection</h1>
-      <form onSubmit={handleSubmit} className="space-y-8">
-        {/* Title */}
-        <div>
-          <label className="block font-semibold mb-1">Title</label>
-          <input type="text" className="w-full border p-2 rounded" value={title} onChange={e => setTitle(e.target.value)} required />
-        </div>
-        {/* Deity and Scripture Row */}
-        <div className="flex flex-col md:flex-row gap-4">
-          {/* Deity Dropdown */}
-          <div className="w-full md:w-1/2">
-            <label className="block font-semibold mb-1">Deity</label>
-            <select
-              className="w-full border p-2 rounded mb-2"
-              value={deity}
-              onChange={e => setDeity(e.target.value)}
-              required
-            >
-              <option value="">Select Deity</option>
-              {DEITIES.map(d => <option key={d} value={d}>{d}</option>)}
-            </select>
-            {deity === "Other" && (
+    <ErrorBoundary>
+      <div className="min-h-screen bg-gray-50 py-8">
+        <form onSubmit={handleSubmit} className="max-w-2xl mx-auto px-4 sm:px-8">
+          <div className="mb-8">
+            <h2 className="text-2xl font-bold text-gray-800 mb-4 border-l-4 border-orange-400 pl-2">Upload New Sloka Collection</h2>
+            {/* Title Field */}
+            <div className="mb-4">
+              <label className="block font-semibold text-gray-700 mb-1">Title</label>
               <input
                 type="text"
-                className="w-full border p-2 mt-2"
-                placeholder="Enter custom deity"
-                value={customDeity}
-                onChange={e => setCustomDeity(e.target.value)}
+                className="w-full rounded-lg border border-gray-300 p-3 focus:ring-2 focus:ring-blue-300 focus:outline-none"
+                placeholder="Enter collection title..."
+                value={title}
+                onChange={e => setTitle(e.target.value)}
                 required
               />
-            )}
-          </div>
-          {/* Scripture Dropdown */}
-          <div className="w-full md:w-1/2">
-            <label className="block font-semibold mb-1">Scripture</label>
-            <select
-              className="w-full border p-2 rounded mb-2"
-              value={scripture}
-              onChange={e => setScripture(e.target.value)}
-              required
-            >
-              <option value="">Select Scripture</option>
-              {SCRIPTURES.map(s => <option key={s} value={s}>{s}</option>)}
-            </select>
-            {scripture === "Other" && (
-              <input
-                type="text"
-                className="w-full border p-2 mt-2"
-                placeholder="Enter custom scripture"
-                value={customScripture}
-                onChange={e => setCustomScripture(e.target.value)}
-                required
-              />
-            )}
-          </div>
-        </div>
-        {/* Slokas Section */}
-        <div>
-          <label className="block font-semibold mb-2 text-lg">Slokas</label>
-          {slokas.map((sloka, idx) => (
-            <div key={idx} className="border-2 border-blue-200 rounded-lg p-6 mb-8 bg-blue-50 relative">
-              <div className="flex justify-between items-center mb-4">
-                <span className="font-bold text-blue-700 text-lg">Sloka {idx + 1}</span>
-                <button type="button" className="text-red-500 font-semibold" onClick={() => removeSloka(idx)} disabled={slokas.length === 1}>Remove</button>
-              </div>
-              {/* Original Text */}
-              <div className="mb-4">
-                <label className="block font-semibold mb-1 text-blue-900">Original Text (Sanskrit)</label>
-                <div className="flex gap-2 items-start">
-                  <textarea
-                    className="w-full border p-3 rounded min-h-[80px] text-lg"
-                    value={sloka.originalText}
-                    onChange={e => handleSlokaChange(idx, "originalText", e.target.value)}
+            </div>
+            {/* Deity and Scripture Row */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+              {/* Deity Dropdown */}
+              <div>
+                <label className="block font-semibold text-gray-700 mb-1">Deity</label>
+                <select
+                  className="w-full rounded-lg border border-gray-300 p-3 focus:ring-2 focus:ring-blue-300 focus:outline-none mb-2"
+                  value={deity}
+                  onChange={e => setDeity(e.target.value)}
+                  required
+                >
+                  <option value="">Select Deity</option>
+                  {DEITIES.map(d => <option key={d} value={d}>{d}</option>)}
+                </select>
+                {deity === "Other" && (
+                  <input
+                    type="text"
+                    className="w-full rounded-lg border border-gray-300 p-3 focus:ring-2 focus:ring-blue-300 focus:outline-none mt-2"
+                    placeholder="Enter custom deity"
+                    value={customDeity}
+                    onChange={e => setCustomDeity(e.target.value)}
                     required
                   />
-                  <button
-                    type="button"
-                    className={`bg-blue-600 text-white px-4 py-2 rounded font-semibold h-fit mt-1 ${slokaLoading[idx] ? 'opacity-60 cursor-not-allowed' : ''}`}
-                    onClick={() => handleSlokaOriginalBlur(idx)}
-                    disabled={!sloka.originalText.trim() || slokaLoading[idx]}
-                  >
-                    {slokaLoading[idx] ? 'Generating...' : 'Generate'}
-                  </button>
-                </div>
-                {slokaError[idx] && <div className="text-red-600 mt-1">{slokaError[idx]}</div>}
+                )}
               </div>
-              {/* Transliteration Section */}
-              <div className="mb-4">
-                <div className="font-semibold mb-1 text-blue-900">Transliteration</div>
-                <div className="flex gap-4">
-                  <textarea placeholder="English" className="border p-2 w-1/2 rounded min-h-[50px]" value={sloka.transliteration.en} onChange={e => handleSlokaChange(idx, "transliteration", e.target.value, "en")} required />
-                  <textarea placeholder="Telugu" className="border p-2 w-1/2 rounded min-h-[50px]" value={sloka.transliteration.te} onChange={e => handleSlokaChange(idx, "transliteration", e.target.value, "te")} required />
-                </div>
-              </div>
-              {/* Meaning Section */}
-              <div className="mb-4">
-                <div className="font-semibold mb-1 text-blue-900">Meaning</div>
-                <div className="flex gap-4">
-                  <textarea placeholder="English" className="border p-2 w-1/3 rounded min-h-[50px]" value={sloka.meaning.en} onChange={e => handleSlokaChange(idx, "meaning", e.target.value, "en")} required />
-                  <textarea placeholder="Hindi" className="border p-2 w-1/3 rounded min-h-[50px]" value={sloka.meaning.hi} onChange={e => handleSlokaChange(idx, "meaning", e.target.value, "hi")} required />
-                  <textarea placeholder="Telugu" className="border p-2 w-1/3 rounded min-h-[50px]" value={sloka.meaning.te} onChange={e => handleSlokaChange(idx, "meaning", e.target.value, "te")} required />
-                </div>
-              </div>
-              {/* Audio Upload Section */}
-              <div className="mb-2 p-4 bg-white border border-blue-200 rounded">
-                <label className="block font-semibold mb-1 text-blue-900">Audio File</label>
-                <input type="file" accept="audio/*" onChange={e => handleAudioChange(idx, e.target.files?.[0] || null)} required />
-                {sloka.audioFile && (
-                  <div className="mt-2 flex items-center gap-4">
-                    <span className="text-sm text-gray-700">{sloka.audioFile.name}</span>
-                    {sloka.audioPreviewUrl && (
-                      <audio controls src={sloka.audioPreviewUrl} className="h-8" />
-                    )}
-                  </div>
+              {/* Scripture Dropdown */}
+              <div>
+                <label className="block font-semibold text-gray-700 mb-1">Scripture</label>
+                <select
+                  className="w-full rounded-lg border border-gray-300 p-3 focus:ring-2 focus:ring-blue-300 focus:outline-none mb-2"
+                  value={scripture}
+                  onChange={e => setScripture(e.target.value)}
+                  required
+                >
+                  <option value="">Select Scripture</option>
+                  {SCRIPTURES.map(s => <option key={s} value={s}>{s}</option>)}
+                </select>
+                {scripture === "Other" && (
+                  <input
+                    type="text"
+                    className="w-full rounded-lg border border-gray-300 p-3 focus:ring-2 focus:ring-blue-300 focus:outline-none mt-2"
+                    placeholder="Enter custom scripture"
+                    value={customScripture}
+                    onChange={e => setCustomScripture(e.target.value)}
+                    required
+                  />
                 )}
               </div>
             </div>
-          ))}
-          <button type="button" className="bg-blue-500 text-white px-4 py-2 rounded font-semibold" onClick={addSloka}>Add Sloka</button>
-        </div>
-        <button type="submit" className="bg-green-600 text-white px-6 py-2 rounded font-bold text-lg" disabled={loading}>{loading ? "Uploading..." : "Submit"}</button>
-        {message && <div className="mt-4 text-center font-semibold text-lg">{message}</div>}
-      </form>
-    </div>
+            <h2 className="text-2xl font-bold text-gray-800 mb-4 border-l-4 border-orange-400 pl-2">Slokas</h2>
+            {slokas.map((sloka, idx) => (
+              <div key={idx} className="bg-white shadow-xl rounded-2xl p-6 mb-8 border border-blue-100 relative">
+                <div className="flex justify-between items-center mb-4">
+                  <span className="font-bold text-blue-700 text-xl">Sloka {idx + 1}</span>
+                  {idx > 0 && (
+                    <button type="button" className="flex items-center gap-1 bg-red-100 hover:bg-red-200 text-red-600 font-semibold px-3 py-1 rounded transition" onClick={() => removeSloka(idx)}>
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+                      Remove
+                    </button>
+                  )}
+                </div>
+                <label className="block font-semibold text-gray-700 mb-1">Original Text (Sanskrit) *</label>
+                <textarea
+                  className="w-full rounded-lg border border-gray-300 p-3 mb-3 focus:ring-2 focus:ring-blue-300 focus:outline-none resize-vertical min-h-[80px]"
+                  placeholder="Enter Sanskrit text here..."
+                  value={sloka.originalText}
+                  onChange={e => handleSlokaChange(idx, "originalText", e.target.value)}
+                  onBlur={() => handleSlokaOriginalBlur(idx)}
+                  required
+                />
+                <button
+                  type="button"
+                  className="mb-4 flex items-center gap-2 bg-[#4A90E2] hover:bg-[#357ABD] text-white px-4 py-2 rounded-lg shadow transition"
+                  onClick={() => handleSlokaOriginalBlur(idx)}
+                  disabled={slokaLoading[idx]}
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 17l-4 4m0 0l-4-4m4 4V3" /></svg>
+                  {slokaLoading[idx] ? "Generating..." : "Generate Transliteration"}
+                </button>
+                <p className="text-xs text-gray-500 mb-2 ml-1">We use AI to generate the transliteration and meaning. You can review, edit, and upload your own version.</p>
+                {slokaError[idx] && <div className="text-red-500 mb-2">{slokaError[idx]}</div>}
+                <div className="mb-4">
+                  <label className="block font-semibold text-gray-700 mb-1">Transliteration</label>
+                  <div className="flex flex-col gap-2">
+                    <textarea
+                      className="w-full rounded-lg border border-gray-300 p-3 focus:ring-2 focus:ring-blue-300 focus:outline-none resize-vertical min-h-[48px]"
+                      placeholder="English transliteration"
+                      value={sloka.transliteration.en}
+                      onChange={e => handleSlokaChange(idx, "transliteration", e.target.value, "en")}
+                    />
+                    <textarea
+                      className="w-full rounded-lg border border-gray-300 p-3 focus:ring-2 focus:ring-blue-300 focus:outline-none resize-vertical min-h-[48px]"
+                      placeholder="Telugu transliteration"
+                      value={sloka.transliteration.te}
+                      onChange={e => handleSlokaChange(idx, "transliteration", e.target.value, "te")}
+                    />
+                  </div>
+                </div>
+                <div className="mb-4">
+                  <label className="block font-semibold text-gray-700 mb-1">Meaning</label>
+                  <div className="flex flex-col gap-2">
+                    <textarea
+                      className="w-full rounded-lg border border-gray-300 p-3 focus:ring-2 focus:ring-blue-300 focus:outline-none resize-vertical min-h-[48px]"
+                      placeholder="English meaning"
+                      value={sloka.meaning.en}
+                      onChange={e => handleSlokaChange(idx, "meaning", e.target.value, "en")}
+                    />
+                    <textarea
+                      className="w-full rounded-lg border border-gray-300 p-3 focus:ring-2 focus:ring-blue-300 focus:outline-none resize-vertical min-h-[48px]"
+                      placeholder="Hindi meaning"
+                      value={sloka.meaning.hi}
+                      onChange={e => handleSlokaChange(idx, "meaning", e.target.value, "hi")}
+                    />
+                    <textarea
+                      className="w-full rounded-lg border border-gray-300 p-3 focus:ring-2 focus:ring-blue-300 focus:outline-none resize-vertical min-h-[48px]"
+                      placeholder="Telugu meaning"
+                      value={sloka.meaning.te}
+                      onChange={e => handleSlokaChange(idx, "meaning", e.target.value, "te")}
+                    />
+                  </div>
+                </div>
+                <div className="mb-4">
+                  <label className="block font-semibold text-gray-700 mb-1">Audio File</label>
+                  <label className="flex flex-col items-center justify-center w-full h-24 border-2 border-dashed border-blue-300 rounded-lg cursor-pointer bg-blue-50 hover:bg-blue-100 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-blue-400 mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V4a1 1 0 011-1h8a1 1 0 011 1v12m-4 4h-4a1 1 0 01-1-1v-1a1 1 0 011-1h4a1 1 0 011 1v1a1 1 0 01-1 1z" /></svg>
+                    <span className="text-blue-500">Click to upload audio file or drag and drop</span>
+                    <input
+                      type="file"
+                      accept="audio/*"
+                      className="hidden"
+                      onChange={e => handleAudioChange(idx, e.target.files?.[0] || null)}
+                    />
+                    {sloka.audioFile && <span className="text-xs text-gray-500 mt-1">{sloka.audioFile.name}</span>}
+                  </label>
+                </div>
+              </div>
+            ))}
+            <button
+              type="button"
+              className="w-fit ml-0 flex items-center justify-center gap-2 bg-[#4A90E2] hover:bg-[#357ABD] text-white font-semibold py-2 px-5 rounded-xl shadow transition mb-6"
+              onClick={addSloka}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" /></svg>
+              Add New Sloka
+            </button>
+          </div>
+          {message && <div className="mb-4 text-green-600 font-semibold text-center">{message}</div>}
+          <button
+            type="submit"
+            className="w-full max-w-xs mx-auto bg-green-500 hover:bg-green-600 text-white font-bold py-3 rounded-xl shadow transition text-lg"
+            disabled={loading}
+          >
+            {loading ? "Submitting..." : "Submit"}
+          </button>
+        </form>
+      </div>
+    </ErrorBoundary>
   );
 }
 

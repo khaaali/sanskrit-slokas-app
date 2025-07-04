@@ -46,7 +46,7 @@ This app is a modern, full-stack Sanskrit Slokas learning platform built with Ne
 
 ## Result
 - The app is scalable, type-safe, and cloud-native, with clear separation of concerns between frontend, API, storage, and database.
-- New slokas and audio can be added and accessed instantly, supporting a modern learning experience.
+- New slokas and audio can be added and accessed instantly, supporting a modern learning experience. 
 
 ## AI Integration for Sloka Generation (2024-06-29)
 

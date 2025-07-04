@@ -23,6 +23,7 @@ const SlokaLearner = ({ sloka, slokaIndex, group }: SlokaLearnerProps) => {
   const [language, setLanguage] = useState<Language>('en');
   const [expandedIndex, setExpandedIndex] = useState<number>(slokaIndex);
   const [showAllVerses, setShowAllVerses] = useState(false);
+  const [sectionView, setSectionView] = useState<'original' | 'transliteration' | 'meaning'>('original');
   
   // Controlled state for SequentialAudioPlayer
   const [currentVerseIndex, setCurrentVerseIndex] = useState(0);
@@ -135,6 +136,46 @@ const SlokaLearner = ({ sloka, slokaIndex, group }: SlokaLearnerProps) => {
                 </div>
               </div>
             )}
+            {isMultiVerse && showAllVerses && (
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-2">
+                <div className="flex-1" />
+                <div className="inline-flex rounded-full shadow-sm bg-gray-100 p-1">
+                  <button
+                    className={`flex items-center justify-center px-4 py-1.5 rounded-full text-sm font-semibold transition-colors focus:outline-none ${sectionView === 'original' ? 'bg-blue-600 text-white shadow' : 'bg-transparent text-[#2C3E50]'}`}
+                    onClick={() => setSectionView('original')}
+                    aria-label="Show Original"
+                  >
+                    Original
+                  </button>
+                  <button
+                    className={`flex items-center justify-center px-4 py-1.5 rounded-full text-sm font-semibold transition-colors focus:outline-none ${sectionView === 'transliteration' ? 'bg-blue-600 text-white shadow' : 'bg-transparent text-[#2C3E50]'}`}
+                    onClick={() => setSectionView('transliteration')}
+                    aria-label="Show Transliteration"
+                  >
+                    Transliteration
+                  </button>
+                  <button
+                    className={`flex items-center justify-center px-4 py-1.5 rounded-full text-sm font-semibold transition-colors focus:outline-none ${sectionView === 'meaning' ? 'bg-blue-600 text-white shadow' : 'bg-transparent text-[#2C3E50]'}`}
+                    onClick={() => setSectionView('meaning')}
+                    aria-label="Show Meaning"
+                  >
+                    Meaning
+                  </button>
+                </div>
+                <div className="ml-2">
+                  <LanguageSelector
+                    value={language}
+                    options={[
+                      { value: 'en', label: 'EN' },
+                      { value: 'hi', label: 'हि' },
+                      { value: 'te', label: 'తె' },
+                    ]}
+                    onChange={val => handleLanguageChange(val as Language)}
+                    disabled={sectionView === 'original'}
+                  />
+                </div>
+              </div>
+            )}
             {isMultiVerse && showAllVerses ? (
               <div className="bg-white rounded-lg shadow p-6 mb-4">
                 <h3 className="font-extrabold text-xl mb-4 border-b border-gray-100 pb-1 text-center text-[#22304A]">मूलपाठ: <span className="text-sm text-gray-500 font-normal">(All Verses)</span></h3>
@@ -160,6 +201,8 @@ const SlokaLearner = ({ sloka, slokaIndex, group }: SlokaLearnerProps) => {
                   slokas={group.slokas}
                   currentVerseIndex={currentVerseIndex}
                   onVerseClick={handleVerseClick}
+                  sectionView={sectionView}
+                  language={language}
                 />
               </div>
             ) : isMultiVerse ? (
@@ -240,10 +283,12 @@ const SlokaLearner = ({ sloka, slokaIndex, group }: SlokaLearnerProps) => {
   );
 };
 
-function ColumnMajorSlokaGrid({ slokas, currentVerseIndex, onVerseClick }: {
+function ColumnMajorSlokaGrid({ slokas, currentVerseIndex, onVerseClick, sectionView = 'original', language = 'en' }: {
   slokas: Sloka[];
   currentVerseIndex: number;
   onVerseClick: (idx: number) => void;
+  sectionView?: 'original' | 'transliteration' | 'meaning';
+  language?: Language;
 }) {
   // Responsive columns: 1 (mobile), 2 (sm), 3 (lg)
   // We'll render 3 columns for desktop, 2 for tablet, 1 for mobile, but let CSS handle the wrapping.
@@ -270,7 +315,26 @@ function ColumnMajorSlokaGrid({ slokas, currentVerseIndex, onVerseClick }: {
               onClick={() => onVerseClick(idx)}
               style={{ minHeight: 120 }}
             >
-              <div className="text-lg">{slokas[idx].originalText}</div>
+              {sectionView === 'original' && (
+                <div className="text-lg">{slokas[idx].originalText}</div>
+              )}
+              {sectionView === 'transliteration' && language === 'hi' && (
+                <div className="text-lg">{slokas[idx].originalText}</div>
+              )}
+              {sectionView === 'transliteration' && language !== 'hi' && (
+                <div className="text-base font-sans text-gray-800">{
+                  typeof slokas[idx].transliteration === 'object'
+                    ? ((slokas[idx].transliteration as Record<string, string>)[language] ?? (slokas[idx].transliteration as Record<string, string>)['en'] ?? Object.values(slokas[idx].transliteration as Record<string, string>)[0])
+                    : slokas[idx].transliteration
+                }</div>
+              )}
+              {sectionView === 'meaning' && (
+                <div className="text-base font-sans text-gray-700">{
+                  typeof slokas[idx].meaning === 'object'
+                    ? ((slokas[idx].meaning as Record<string, string>)[language] ?? (slokas[idx].meaning as Record<string, string>)['en'] ?? Object.values(slokas[idx].meaning as Record<string, string>)[0])
+                    : slokas[idx].meaning
+                }</div>
+              )}
               <div className="text-xs text-gray-500 mt-2">॥ {idx + 1} ॥</div>
             </div>
           ))}

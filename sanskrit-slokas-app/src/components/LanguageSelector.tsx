@@ -4,10 +4,11 @@ interface LanguageSelectorProps {
   value: string;
   options: { value: string; label: string }[];
   onChange: (value: string) => void;
+  disabled?: boolean;
 }
 
-const LanguageSelector: React.FC<LanguageSelectorProps> = ({ value, options, onChange }) => (
-  <div className="flex space-x-1">
+const LanguageSelector: React.FC<LanguageSelectorProps> = ({ value, options, onChange, disabled = false }) => (
+  <div className={`flex space-x-1 ${disabled ? 'opacity-50 pointer-events-none' : ''}`}>
     {options.map(option => (
       <button
         key={option.value}
@@ -19,7 +20,8 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({ value, options, onC
             : 'bg-white text-[#2C3E50] border-[#C0C0C0] hover:bg-blue-50'}
         `}
         style={{ minWidth: '28px', height: '28px', fontSize: '0.75rem' }}
-        onClick={() => onChange(option.value)}
+        onClick={!disabled ? () => onChange(option.value) : undefined}
+        disabled={disabled}
       >
         {option.label}
       </button>

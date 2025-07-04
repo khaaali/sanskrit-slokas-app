@@ -1,8 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import React, { useState, useEffect } from "react";
 import { upload } from "@vercel/blob/client";
-import { ErrorBoundary } from './ErrorBoundary';
 import { ErrorBoundary } from './ErrorBoundary';
 
 const DEITIES = ["Shiva", "Vishnu", "Ganapathi", "Shakti", "Skanda", "Aditya", "Other"];
@@ -38,7 +36,6 @@ const emptySloka: Sloka = {
 };
 
 function UploadPage() {
-function UploadPage() {
   const [deity, setDeity] = useState<string>("");
   const [customDeity, setCustomDeity] = useState<string>("");
   const [scripture, setScripture] = useState<string>("");
@@ -47,8 +44,6 @@ function UploadPage() {
   const [slokas, setSlokas] = useState<Sloka[]>([{ ...emptySloka }]);
   const [loading, setLoading] = useState<boolean>(false);
   const [message, setMessage] = useState<string>("");
-  const [slokaLoading, setSlokaLoading] = useState<boolean[]>([false]);
-  const [slokaError, setSlokaError] = useState<string[]>([""]);
   const [slokaLoading, setSlokaLoading] = useState<boolean[]>([false]);
   const [slokaError, setSlokaError] = useState<string[]>([""]);
 
@@ -68,80 +63,6 @@ function UploadPage() {
         updated[idx].originalText = value;
       }
       return updated;
-    });
-  };
-
-  const handleSlokaOriginalBlur = async (idx: number) => {
-    const text = slokas[idx].originalText;
-    if (!text.trim()) return;
-    setSlokaLoading((prev) => {
-      const arr = [...prev];
-      arr[idx] = true;
-      return arr;
-    });
-    setSlokaError((prev) => {
-      const arr = [...prev];
-      arr[idx] = "";
-      return arr;
-    });
-    try {
-      const res = await fetch("/api/generate-sloka", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ sanskritText: text }),
-      });
-      const data = await res.json();
-      if (data.result) {
-        let parsed;
-        try {
-          let aiText = data.result.trim();
-          // Remove Markdown code block if present
-          if (aiText.startsWith('```json')) {
-            aiText = aiText.replace(/^```json/, '').replace(/```$/, '').trim();
-          } else if (aiText.startsWith('```')) {
-            aiText = aiText.replace(/^```/, '').replace(/```$/, '').trim();
-          }
-          parsed = JSON.parse(aiText);
-        } catch {
-          setSlokaError((prev) => {
-            const arr = [...prev];
-            arr[idx] = "AI response could not be parsed.";
-            return arr;
-          });
-          setSlokaLoading((prev) => {
-            const arr = [...prev];
-            arr[idx] = false;
-            return arr;
-          });
-          return;
-        }
-        setSlokas((prev) => {
-          const updated = [...prev];
-          updated[idx].transliteration.en = parsed.transliteration?.english || "";
-          updated[idx].transliteration.te = parsed.transliteration?.telugu || "";
-          updated[idx].meaning.en = parsed.meaning?.english || "";
-          updated[idx].meaning.hi = parsed.meaning?.hindi || "";
-          updated[idx].meaning.te = parsed.meaning?.telugu || "";
-          return updated;
-        });
-      } else {
-        setSlokaError((prev) => {
-          const arr = [...prev];
-          arr[idx] = data.error || "Unknown error";
-          return arr;
-        });
-      }
-    } catch {
-      setSlokaError((prev) => {
-        const arr = [...prev];
-        arr[idx] = "Failed to call API";
-        return arr;
-      });
-    }
-    setSlokaLoading((prev) => {
-      const arr = [...prev];
-      arr[idx] = false;
-      return arr;
     });
   };
 
@@ -292,9 +213,6 @@ function UploadPage() {
     } catch (_err) {
       if (_err && typeof _err === 'object' && 'message' in _err) {
         setMessage("Error: " + (_err as { message: string }).message);
-    } catch (_err) {
-      if (_err && typeof _err === 'object' && 'message' in _err) {
-        setMessage("Error: " + (_err as { message: string }).message);
       } else {
         setMessage("Error: Unknown error");
       }
@@ -302,22 +220,6 @@ function UploadPage() {
       setLoading(false);
     }
   };
-
-  // Update slokaLoading and slokaError arrays when slokas are added/removed
-  useEffect(() => {
-    setSlokaLoading((prev) => {
-      const arr = [...prev];
-      while (arr.length < slokas.length) arr.push(false);
-      while (arr.length > slokas.length) arr.pop();
-      return arr;
-    });
-    setSlokaError((prev) => {
-      const arr = [...prev];
-      while (arr.length < slokas.length) arr.push("");
-      while (arr.length > slokas.length) arr.pop();
-      return arr;
-    });
-  }, [slokas.length]);
 
   // Update slokaLoading and slokaError arrays when slokas are added/removed
   useEffect(() => {
@@ -509,14 +411,6 @@ function UploadPage() {
           </button>
         </form>
       </div>
-    </ErrorBoundary>
-  );
-}
-
-export default function UploadPageWithBoundary() {
-  return (
-    <ErrorBoundary>
-      <UploadPage />
     </ErrorBoundary>
   );
 }

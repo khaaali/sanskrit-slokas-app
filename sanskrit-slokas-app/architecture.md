@@ -59,3 +59,16 @@ The app integrates Google Gemini (via Google AI Studio) to automatically generat
 - Returns the parsed transliteration and meaning to the frontend, where it is displayed for user review and editing.
 
 Error handling is implemented both server-side (logging and returning clear error messages) and client-side (displaying errors and allowing retry/edit). This AI integration is a core part of the sloka upload flow, streamlining content creation and enhancing user experience while maintaining reliability and transparency in the app's architecture. 
+
+---
+
+## 2024-07: Architectural & Feature Updates
+
+- **AI Integration:** Google Gemini API is now used for generating transliterations and meanings, with robust prompt engineering and markdown-stripping post-processing in the upload flow.
+- **Book View Toggle:** Added a global toggle in book view for switching between Original, Transliteration, and Meaning for all verses, with a language selector that is always visible but only enabled for relevant sections.
+- **Transliteration/Language Logic:** Selecting "hi" for Transliteration in book view now displays the original Sanskrit text, matching user expectations and improving clarity.
+- **Error Handling:** Improved error boundaries, fixed hydration and TypeScript/ESLint issues, and enhanced error messages for a more robust user experience.
+- **Data Consistency:** Debugged and fixed issues with sloka grouping, filtering, and collection merging to ensure correct book/accordion view toggling and data integrity.
+- **Merge Conflict Resolution:** Successfully resolved complex merge conflicts in key files, ensuring a clean build and deployment pipeline.
+
+--- 

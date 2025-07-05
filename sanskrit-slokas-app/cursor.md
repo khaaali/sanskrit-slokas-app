@@ -742,3 +742,23 @@ The app is now fully database-driven, type-safe, and production-ready, with a cl
 - Fixed error boundaries and hydration issues in Next.js by removing <html> and <body> tags from the custom error component.
 - Debugged and resolved Gemini API model/version errors and role usage (user/model) in the API request.
 - Ensured the upload page flow is robust, with clear error handling and user feedback for both AI and upload errors. 
+
+---
+
+## 2024-07: Major Updates & Fixes
+
+### Features & Improvements
+- **AI Integration:** Google Gemini API for automatic transliteration and meaning generation, with robust prompt engineering and markdown-stripping post-processing.
+- **Book View Toggle:** Added a global toggle in book view to switch between Original, Transliteration, and Meaning for all verses at once.
+- **Language Selector:** Language selector is always visible in book view, but only enabled for Transliteration/Meaning. Selecting "hi" for Transliteration shows original Sanskrit.
+- **UI/UX:** Modernized upload page, improved mobile navigation, and responsive design tweaks.
+- **Error Handling:** Added global error boundary, fixed hydration and TypeScript/ESLint issues, and improved error messages throughout the app.
+- **Data Consistency:** Debugged and fixed issues with sloka grouping, filtering, and collection merging for proper book/accordion view toggling.
+- **Merge Conflict Resolution:** Resolved complex merge conflicts in upload/page.tsx and architecture.md, ensuring a clean build and deployment.
+
+### Notable Fixes
+- Fixed duplicate catch blocks, duplicate export statements, and variable redeclarations after merges.
+- Ensured only one export default per file and removed all merge markers.
+- Updated documentation and code comments for clarity.
+
+--- 
